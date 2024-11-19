@@ -81,3 +81,14 @@ document.addEventListener("keydown", (event) => {
     searchBar.classList.toggle("hide");
   }
 });
+
+// Mostrar o botão após o usuário rolar a página (opcional)
+window.onscroll = function () {
+  const whatsappButton = document.querySelector(".whatsapp-button");
+  if (window.scrollY > 100) {
+    // Mostra o botão ao rolar mais de 100px
+    whatsappButton.style.display = "flex";
+  } else {
+    whatsappButton.style.display = "none";
+  }
+};
