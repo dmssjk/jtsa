@@ -5,7 +5,180 @@ body {
   padding: 0px;
   box-sizing: border-box;
   outline-style: none;
+  overflow-x: hidden;
 }
+.cont {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.card {
+  transition: transform 0.3s ease;
+  overflow: hidden; /* Para cortar o conteúdo que "sai" do card */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Aumenta o tamanho do card */
+}
+
+
+.card-img-top {
+  width: 100%; /* Garante que a imagem ocupe toda a largura do card */
+  height: 300px; /* Define uma altura fixa para todas as imagens */
+  object-fit: cover; /* Ajusta as imagens para preencher o espaço sem distorção */
+  border-radius: 5px; /* Mantém as bordas arredondadas */
+}
+
+.background-container  {
+  background: linear-gradient(to right, #c4bcb1, #e3d9c5);
+    border-radius: 0px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    border: 0px solid rgba(255, 255, 255, 0.3); /* Borda semi-transparente */
+    color: #fff; /* Cor do texto para contraste */
+  }
+
+
+.location-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background: linear-gradient(to right, #3b5998, #f8b400);
+}
+
+.location-container {
+  display: flex;
+  gap: 30px;
+}
+
+.location-image {
+  position: relative;
+  width: 60%;
+}
+
+.location-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.marker {
+  position: relative;
+  background-color: #003366;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  transform: translate(-50%, -50%);
+}
+
+.location-text {
+  width: 35%;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.location-text h1 {
+  font-size: 3rem;
+  color: #ff6600;
+  margin-bottom: 20px;
+}
+
+.location-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+address {
+  font-style: normal;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #ffcc00;
+}
+
+.floor-plan-section {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to right, #3b5998, #f8b400); /* Ajuste o gradiente conforme necessário */
+}
+
+.floor-plan-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.floor-plan-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.floor-plan-card {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 200px;
+  flex: 1;
+  text-align: left;
+}
+
+.floor-plan-card h3 {
+  margin-bottom: 10px;
+  color: #f8b400;
+}
+
+.details {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.size {
+  font-size: 22px;
+  font-weight: bold;
+  color: #f8b400;
+  margin-bottom: 10px;
+}
+
+.adapt {
+  font-size: 14px;
+  color: #cccccc;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+/* Estilos específicos para as cores das cartas */
+.card-a {
+  background-color: #004080;
+}
+
+.card-b {
+  background-color: #333333;
+}
+
+.card-c {
+  background-color: #003366;
+}
+
+.card-d {
+  background-color: #333333;
+}
+
 .creative-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -144,15 +317,19 @@ html {
   margin: 0px auto;
   padding: 0px;
 }
+
 .container2 {
-  width: 100%;
+  width: 95%;
   margin: 0px auto;
   padding: 0px;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  url(../Images/banner.jpg)
 }
 /* SECTION ZERO = LANDING VIEW */
 #sec-0 {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(../Images/banner.jpg) no-repeat top center/cover;
+    background-attachment: fixed; /* Adicione esta linha */
 }
 #sec-0 header.top {
   background-color: var(--bgaccent);
@@ -319,6 +496,13 @@ html {
   align-items: center;
   text-align: center;
   padding: 3rem 0px;
+}
+#sec-0 .container1 {
+  max-width: 80%; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza a .container */
+  color: #fff; /* Garante que o texto fique legível */
+  text-align: center;
+  
 }
 #sec-0 article h1 {
   font-weight: normal;
