@@ -584,24 +584,13 @@ html {
   max-width: 100%;
 }
 
-
+/* SECTION 2 =  */
 #sec-2 {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../Images/bg4.jpg) no-repeat center center/cover;
+  padding: 4rem 0 2.5rem;
   text-align: center;
-  padding: 3rem 0px 1.8rem;
 }
-#sec-2 .cont {
-  display: flex;
-  flex-direction: column; /* Organiza os itens em coluna */
-  align-items: center; /* Centraliza horizontalmente */
-  justify-content: center; /* Centraliza verticalmente */
-  text-align: center; /* Centraliza o texto */
-  padding: 10px; /* Adiciona espaçamento interno */
-  line-height: 1.5; /* Ajusta o espaçamento entre linhas */
-}
-
-
 
 #sec-2 .container > h1 {
   color: var(--haccent);
@@ -610,57 +599,69 @@ html {
   margin-bottom: 10px;
   font-weight: 700;
 }
+
 #sec-2 .container > p {
   color: var(--txtaccent);
   margin-bottom: 30px;
 }
+
 #sec-2 article {
+  display: flex; /* Coloca os cards lado a lado */
+  flex-wrap: wrap; /* Permite quebra de linha para telas menores */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 20px; /* Espaçamento entre os cards */
+  padding: 20px;
+}
+
+#sec-2 .card {
+  width: 250px; /* Largura fixa */
+  height: 350px; /* Altura fixa */
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  overflow: hidden; /* Esconde conteúdo excedente */
 }
-#sec-2 article figure {
-  text-align: center;
-  max-width: 63%;
-  margin-top: 40px;
-}
-#sec-2 article .cont {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-  border-radius: 10px;
-  padding: 95px 10px 20px;
-  text-align: center;
-  margin-top: -75px;
-}
-#sec-2 article figure div:first-of-type {
-  width: 5em;
-  height: 5em;
-  background-color: white /* var(--haccent2) */;
+
+#sec-2 .card .icon {
+  width: 80px;
+  height: 80px;
+  background-color: #fff; /* Fundo branco para o ícone */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px auto;
-  position: relative;
-  z-index: 1;
+  margin-top: 20px; /* Espaço superior */
 }
-#sec-2 article figure img {
-  max-width: 55%;
+
+#sec-2 .card .header {
+  font-size: 1.5rem; /* Tamanho do título */
+  font-weight: bold; /* Negrito para o título */
+  color: #e2393d; /* Cor do título */
+  margin: 10px 0; /* Espaçamento entre o título e outros elementos */
+  text-align: center; /* Centraliza o texto */
 }
-#sec-2 article figure h2 {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--haccent2);
-  position: center;
+
+#sec-2 .card .content {
+  font-size: 1rem; /* Tamanho do texto */
+  line-height: 1.5; /* Espaçamento entre linhas para melhor leitura */
+  color: #ffffff; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 10px; /* Espaçamento interno */
+  overflow-y: auto; /* Adiciona rolagem vertical se o texto exceder o espaço */
 }
-#sec-2 article figure p {
-  color: var(--txtaccent);
-  font-size: 0.88rem;
-  text-shadow: 1px 1px #73757e;
-}
+
+
+
+
+
+/* SECTION 3 = */
+
 #sec-3 {
-  background-color: var(--txtaccent);
+  background-color:whitesmoke;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -682,6 +683,10 @@ html {
 #sec-3 .card {
   width: 90%;
   margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  overflow: hidden; /* Esconde conteúdo excedente */
 }
 #sec-3 .card p {
   text-align: justify;
@@ -1051,6 +1056,7 @@ html {
   }
   .container {
     width: 520px;
+    
   }
   #sec-0 header nav a {
     background-color: transparent;
@@ -1143,18 +1149,7 @@ html {
     margin: 0px;
     text-align: right;
   }
-  #sec-2 {
-    padding: 4rem 0px 2.5rem;
-  }
-  #sec-2 article {
-    justify-content: space-between;
-  }
-  #sec-2 article figure {
-    max-width: 40%;
-  }
-  #sec-2 article figure img {
-    max-width: 55%;
-  }
+ 
   #sec-3 {
     padding-top: 40px;
     padding-bottom: 50px;
@@ -1234,17 +1229,7 @@ html {
   #sec-1 article h2 {
     font-size: 1.8rem;
   }
-  #sec-2 {
-    background-position: center top;
-  }
-  #sec-2 article {
-    justify-content: space-evenly;
-  }
 
-  
-  #sec-2 article figure {
-    max-width: 21%;
-  }
   #sec-3 {
     padding-top: 70px;
     padding-bottom: 60px;
