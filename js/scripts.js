@@ -92,3 +92,16 @@ window.onscroll = function () {
     whatsappButton.style.display = "none";
   }
 };
+// Função para abrir o modal
+function openModal(imageSrc) {
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-img");
+  modalImg.src = imageSrc; // Define a imagem no modal
+  modal.classList.add("active"); // Mostra o modal
+}
+
+// Função para fechar o modal
+function closeModal() {
+  const modal = document.getElementById("image-modal");
+  modal.classList.remove("active"); // Esconde o modal
+}

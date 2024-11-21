@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700'); 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap');
+
 *
 body {
   margin: 0px;
@@ -31,7 +34,7 @@ body {
 }
 
 .background-container  {
-  background: linear-gradient(to right, #c4bcb1, #e3d9c5);
+  background: linear-gradient(to right, #fdfdfd, #cac9c6);
     border-radius: 0px; /* Bordas arredondadas */
     padding: 20px; /* Espaçamento interno */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
@@ -40,7 +43,7 @@ body {
     color: #fff; /* Cor do texto para contraste */
   }
 
-
+/* ISABEL.HTML */
 .location-section {
   display: flex;
   align-items: center;
@@ -189,35 +192,12 @@ ul li {
   margin-bottom: 30px;
 }
 
-.isabel-logo {
-  width: 150px;
-  margin-bottom: 20px;
-}
 
 .main-text-block {
   display: flex;
   justify-content: space-between;
   text-align: left;
   margin-bottom: 20px;
-}
-
-.left-text-isabel, .right-text-isabel {
-  flex: 1;
-  padding: 20px;
-}
-
-.left-text-isabel h2, .right-text-isabel h2 {
-  font-size: 2rem;
-  color: #002d72; /* Ajuste conforme necessário */
-}
-
-.highlight-text, .highlight-location {
-  color: #02a702; /* Cor de destaque */
-}
-
-.description-text {
-  font-size: 1rem;
-  color: #666;
 }
 
 .isabel-buttons {
@@ -236,39 +216,38 @@ ul li {
   font-size: 1rem;
 }
 .isabel-btn-primary:hover {
-  background-color:greenyellow;
+  background-color:var(--secondary-green);
 }
 
 .isabel-btn-secondary {
   background-color: transparent;
-  border: 2px solid green;
-  color: green;
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
 }
-.isabel-btn-secondary:hover {
-  background-color: greenyellow;
-}
+
  
 .isabel-image-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 5px;
   padding: 20px;
 }
 
 .gallery-img {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
+  height: 200px;
+  border-radius: 0px;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
 .gallery-img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
 }
 
 .gallery-img-link {
@@ -277,6 +256,79 @@ ul li {
   outline: none;
   text-decoration: none;
   color: inherit;
+}
+
+.modal {
+  display: none; /* Oculto por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal.active {
+  display: flex; /* Exibe o modal ao ativar a classe */
+}
+
+/* Botão para fechar o modal */
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+.modal {
+  display: none; /* Oculto por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal.active {
+  display: flex; /* Exibe o modal ao ativar a classe */
+}
+
+/* Botão para fechar o modal */
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 /* Responsividade */
@@ -291,7 +343,6 @@ ul li {
       grid-template-columns: 1fr;
   }
 }
-
 
 html {
   font-size: 12px;
@@ -311,7 +362,139 @@ html {
   --haccent2: #e2393d;
   --bgaccent: #1a1c27;
   --bgaccent_withOpacity: #1a1c27f5;
+  --text-dark: #333;
+  --text-light: #fff;
+  --font-family: "Roboto", Arial, sans-serif;
+  --primary-green: #014701; /* Green color from the image */
+  --secondary-green: #005500; /* Slightly lighter green */
+  --text-dark: #333;
+  --font-title: 'Playfair Display', serif; /* Font similar to the one in the image */
+  --font-body: 'Arial', sans-serif;
 }
+  
+
+
+/* Isabel Banner Styling */
+.isabel-banner {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  color: var(--primary-green);
+  font-family: var(--font-body);
+}
+
+.isabel-title {
+  font-family: var(--font-title);
+  font-size: 10rem; /* Adjust size as needed */
+  color: var(--primary-green);
+  margin: 0;
+}
+
+.isabel-subtitle {
+  font-style: italic;
+  font-size: 2.2rem;
+  color: var(--primary-green);
+  margin: 0px 0;
+}
+
+.isabel-location {
+  font-size: 1.0rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin: 10px 0 0;
+}
+
+
+/* Banner Styles */
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+.banner-logo img {
+  max-width: 200px; /* Adjust logo size */
+}
+
+.banner-logo p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--text-dark);
+  margin-top: 5px;
+  max-width: 400px
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinha todos os itens no centro verticalmente */
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+.banner-section {
+  max-width: 600px;
+}
+
+.banner-section h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.banner-section h1 .large-text {
+  font-size: 2.5rem;
+  color: var(--primary-green);
+}
+
+.banner-section h1 .highlight {
+  color: var(--secondary-green);
+}
+
+.banner-section p {
+  font-size: 1.0rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+}
+
+.banner-section p .bold {
+  font-weight: bold;
+  color: var(--primary-green);
+}
+
+.banner-divider {
+  width: 2px;
+  height: 130px;
+  background-color: var(--txtaccent4);
+}
+.divider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centraliza o divider verticalmente */
+  gap: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .banner-divider {
+    display: none;
+  }
+}
+
 .container {
   width: 95%;
   margin: 0px auto;
@@ -323,7 +506,6 @@ html {
   margin: 0px auto;
   padding: 0px;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-  url(../Images/banner.jpg)
 }
 /* SECTION ZERO = LANDING VIEW */
 #sec-0 {
@@ -348,6 +530,12 @@ html {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 0px;
+}
+.typing-text{
+  font-family: fontAwesome;
+  width: 2em;
+  font-size: 1.2em;
+  color: #000;
 }
 #sec-0 header.top p:nth-of-type(2) {
   justify-content: flex-end;
@@ -654,12 +842,16 @@ html {
   overflow-y: auto; /* Adiciona rolagem vertical se o texto exceder o espaço */
 }
 
+.main-container {
+  background: linear-gradient(to right, #bcbdbc, #b3d1af); /* Gradiente como exemplo */
+  padding: 30px; /* Espaçamento interno */
+}
 
 
 
 
 /* SECTION 3 = */
-
+/* 
 #sec-3 {
   background-color:whitesmoke;
   padding-top: 30px;
@@ -683,10 +875,10 @@ html {
 #sec-3 .card {
   width: 90%;
   margin-bottom: 30px;
-  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
-  overflow: hidden; /* Esconde conteúdo excedente */
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro *//*
+  border-radius: 10px; /* Bordas arredondadas *//*
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra *//*
+  overflow: hidden; /* Esconde conteúdo excedente *//*
 }
 #sec-3 .card p {
   text-align: justify;
@@ -719,9 +911,10 @@ html {
   padding: 6px 15px;
   border-radius: 5px;
   display: inline-block;
-}
+} */
 /* SECTION 4 */
 #sec-4 {
+  display:flex;
   background: linear-gradient(rgba(78, 76, 70, 0.8), rgba(78, 76, 70, 0.8)),
     url(../Images/bg2.jpg) no-repeat center center/cover;
   text-align: center;
@@ -741,20 +934,7 @@ html {
   padding: 0px 6rem;
   margin-bottom: 2rem;
 }
-#sec-4 .filter {
-  margin-bottom: 2rem;
-  padding: 0px 6rem;
-}
-#sec-4 .filter a {
-  display: inline-block;
-  padding: 3px 20px 5px;
-  border-radius: 15px;
-  color: var(--txtaccent);
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color 0.65s ease;
-  font-size: 0.85rem;
-}
+
 #sec-4 .filter a:hover {
   background-color: var(--bgaccent);
 }

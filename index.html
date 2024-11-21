@@ -19,14 +19,6 @@
     <section id="sec-0">
       <header class="top"></header>
       <header>
-        <div class="hide" id="searchBar">
-          <input
-            type="search"
-            name="searchBox"
-            id="searchBox"
-            placeholder="Pesquise aqui... Pressione [Esc] para sair"
-          />
-        </div>
         <div class="container">
           <h1>
             <span>JTSA</span> CONSTRUTORA
@@ -39,7 +31,6 @@
             <a href="#sec-4">Portfólio</a>
             <a href="#sec-1">Quem Somos</a>
             <a href="#sec-5">Contato</a>
-            <i class="fa-solid fa-magnifying-glass" id="search"></i>
           </nav>
         </div>
       </header>
@@ -57,56 +48,66 @@
         </div>
       </article>
     </section>
-    <div class="background-container">
-      <div class="container">
-        <h2 class="typing-text">Isabel Condomínio Edifício</h2>
+<!-- SEC-ISABEL -->
 
-        <div class="header-isabel">
-          <!--  <img src="./Images/isabelfundo.jpg" alt="Logo Isabel" class="isabel-logo" /> -->
-
-          <div class="main-text-block">
-            <div class="left-text-isabel">
-              <h2>2 <span class="highlight-text">DORMITÓRIOS</span></h2>
-              <h3>COM UMA SUÍTE | SACADA COM CHURRASQUEIRA</h3>
-              <p class="description-text">
-                Somados a um condomínio completo com conforto, qualidade,
-                diversão, lazer e segurança em um só lugar.
-              </p>
-            </div>
-            <div class="right-text-isabel">
-              <h2>
-                LOCALIZAÇÃO <span class="highlight-text">PRIVILEGIADA</span>
-              </h2>
-              <h3>3 MIN DA ROD, DUTRA | 5 min. da Rod. Tamoios</h3>
-              <p class="description-text">
-                Perto de bancos, hospital, poli-esportivo, praças, mercados e 5
-                minutos do Shopping CenterVale e Centro da Cidade.
-              </p>
-            </div>
-          </div>
-        </div>
+<div class="main-container">
+  <div class="banner">
+    <div class="isabel-banner">
+      <h1 class="isabel-title">Isabel</h1>
+      <p class="isabel-subtitle">Condomínio Edifício</p>
+      <p class="isabel-location">RESIDENCIAL • VIA CAMBUI</p>
+    </div>
+    <div class="banner-content">
+      <div class="banner-section">
+        <h1>
+          <span class="large-text">2 e 3</span> DORMITÓRIOS
+          <br />
+          <span class="highlight">COM UMA SUÍTE</span>
+        </h1>
+        <p>
+          Somados a um <span class="bold">condomínio completo</span> com conforto,
+          qualidade, diversão, lazer e segurança em <span class="bold">um só lugar</span>.
+        </p>
       </div>
-
-      <div class="containe2">
-        <div class="isabel-image-gallery">
-          <img src="./Images/render1.jpeg" alt="Imagem 1" class="gallery-img" />
-          <img src="./Images/render2.jpeg" alt="Imagem 2" class="gallery-img" />
-          <img src="./Images/render3.jpg" alt="Imagem 3" class="gallery-img" />
-          <img src="./Images/isabel3.jpeg" alt="Imagem 4" class="gallery-img" />
-          <img src="./Images/isabel2.jpeg" alt="Imagem 5" class="gallery-img" />
-          <img src="./Images/isabel4.jpeg" alt="Imagem 6" class="gallery-img" />
-          <img src="./Images/render1.jpeg" alt="Imagem 7" class="gallery-img" />
-          <img src="./Images/render2.jpeg" alt="Imagem 8" class="gallery-img" />
-        </div>
-        <div class="isabel-buttons">
-          <a href="isabel.html">
-            <button class="isabel-btn-primary">SABER MAIS</button>
-          </a>
-          <!-- <button class="isabel-btn-secondary">ENTRAR EM CONTATO</button> -->
-        </div>
+      <div class="divider-wrapper">
+    <div class="banner-divider"></div>
+  </div>
+      <div class="banner-section">
+        <h1>
+          LOCALIZAÇÃO<br />
+          <span class="highlight">PRIVILEGIADA</span>
+        </h1>
+        <p>
+          Perto de bancos, hospital, poli-esportivo, praças, mercados e 5 minutos
+          do Shopping Centervale e Centro da Cidade.
+        </p>
       </div>
     </div>
+  </div>
 
+  <div class="container2">
+    <div class="isabel-image-gallery">
+      <a href="#" class="gallery-img-link" onclick="openModal('./Images/render1.jpeg')">
+      <img src="./Images/render1.jpeg" alt="Imagem 1" class="gallery-img" /></a>
+      <img src="./Images/render2.jpeg" alt="Imagem 2" class="gallery-img" />
+      <img src="./Images/render1.jpeg" alt="Imagem 7" class="gallery-img" />
+      <img src="./Images/isabel3.jpeg" alt="Imagem 4" class="gallery-img" />
+      <img src="./Images/isabel2.jpeg" alt="Imagem 5" class="gallery-img" />
+      <img src="./Images/isabel4.jpeg" alt="Imagem 6" class="gallery-img" />
+      <img src="./Images/render1.jpeg" alt="Imagem 7" class="gallery-img" />
+      <img src="./Images/render2.jpeg" alt="Imagem 8" class="gallery-img" />
+    </div>
+    <div class="modal" id="image-modal">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <img src="" alt="Imagem Ampliada" id="modal-img" />
+    </div>
+    <div class="isabel-buttons">
+      <a href="isabel.html">
+        <button class="isabel-btn-primary">SABER MAIS</button>
+      </a>
+    </div>
+  </div>
+</div>
     <section id="sec-1">
       <div class="container">
         <article>
@@ -131,126 +132,85 @@
     <section id="sec-2">
       <div class="container">
         <h1>Por que nos escolher?</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-          expedita tempora quam omnis deleniti! Consequuntur, distinctio
-          magnam beatae dignissimos assumenda quisquam accusamus similique
-          aut esse pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-          expedita tempora quam omnis deleniti! Consequuntur, distinctio
-          magnam beatae dignissimos assumenda quisquam accusamus similique
-          aut esse pariatur.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Harum expedita tempora
+          quam omnis deleniti! Consequuntur, distinctio magnam beatae
+          dignissimos assumenda quisquam accusamus similique aut esse
+          pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Harum expedita tempora quam omnis deleniti! Consequuntur, distinctio
+          magnam beatae dignissimos assumenda quisquam accusamus similique aut
+          esse pariatur.
+        </p>
         <article>
           <div class="card">
             <div class="icon">
-              <img src="../Images/code-solid.svg" alt="Qualidade" style="width: 50px; height: 50px;">
+              <img
+                src="../Images/code-solid.svg"
+                alt="Qualidade"
+                style="width: 50px; height: 50px"
+              />
             </div>
             <div class="header">
               <h2>Qualidade</h2>
             </div>
             <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste
+              ad illum, ducimus asperiores necessitatibus.
             </div>
           </div>
           <div class="card">
             <div class="icon">
-              <img src="../Images/code-solid.svg" alt="Qualidade" style="width: 50px; height: 50px;">
+              <img
+                src="../Images/code-solid.svg"
+                alt="Qualidade"
+                style="width: 50px; height: 50px"
+              />
             </div>
             <div class="header">
               <h2>Qualidade</h2>
             </div>
             <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste
+              ad illum, ducimus asperiores necessitatibus.
             </div>
           </div>
           <div class="card">
             <div class="icon">
-              <img src="../Images/code-solid.svg" alt="Qualidade" style="width: 50px; height: 50px;">
+              <img
+                src="../Images/code-solid.svg"
+                alt="Qualidade"
+                style="width: 50px; height: 50px"
+              />
             </div>
             <div class="header">
               <h2>Qualidade</h2>
             </div>
             <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste
+              ad illum, ducimus asperiores necessitatibus.
             </div>
           </div>
           <div class="card">
             <div class="icon">
-              <img src="../Images/code-solid.svg" alt="Profissionalismo" style="width: 50px; height: 50px;">
+              <img
+                src="../Images/code-solid.svg"
+                alt="Profissionalismo"
+                style="width: 50px; height: 50px"
+              />
             </div>
             <div class="header">
               <h2>Profissionalismo</h2>
             </div>
             <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, expedita tenetur?
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam,
+              expedita tenetur?
             </div>
           </div>
         </article>
       </div>
     </section>
-    
-    <!-- <section id="sec-3">
-      <div class="container">
-        <h1>Nossos Serviços</h1>
-        <div class="cont">
-          <a href="link-construcao.html" class="card border-0">
-            <div>
-              <img
-                src="./Images/card1.jpeg"
-                class="card-img-top"
-                alt="Construção residencial"
-              />
-              <h5 class="caption">Construção residencial</h5>
-            </div>
-            <div class="card-body px-0 pt-4">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-                expedita tempora quam omnis deleniti! Consequuntur, distinctio
-                magnam beatae dignissimos assumenda quisquam accusamus similique
-                aut esse pariatur.
-              </p>
-            </div>
-          </a>
 
-          <a href="link-renovacao.html" class="card border-0">
-            <div>
-              <img
-                src="./Images/card2.jpeg"
-                class="card-img-top"
-                alt="Renovação"
-              />
-              <h5 class="caption">Renovação</h5>
-            </div>
-            <div class="card-body px-0 pt-4">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-                expedita tempora quam omnis deleniti! Consequuntur, distinctio
-                magnam beatae dignissimos assumenda quisquam accusamus similique
-                aut esse pariatur.
-              </p>
-            </div>
-          </a>
-
-          <a href="link-arquitetura.html" class="card border-0">
-            <div>
-              <img
-                src="./Images/card3.jpg"
-                class="card-img-top"
-                alt="Arquitetura"
-              />
-              <h5 class="caption">Arquitetura</h5>
-            </div>
-            <div class="card-body px-0 pt-4">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-                expedita tempora quam omnis deleniti! Consequuntur, distinctio
-                magnam beatae dignissimos assumenda quisquam accusamus similique
-                aut esse pariatur.
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
- -->
     <section id="sec-4">
       <div class="container">
         <h1>Portfólio</h1>
@@ -259,13 +219,7 @@
           reiciendis accusamus autem tenetur vero, facilis omnis, ullam quis
           mollitia deleniti ea similique laboriosam numquam ab dignissimos!
         </p>
-        <div class="filter">
-          <a href="#">Mostrar todos</a>
-          <a href="#">Prédios</a>
-          <a href="#">Reformas</a>
-          <a href="#">Residências</a>
-          <a href="#">Obras</a>
-        </div>
+
         <div class="cont">
           <img
             class="wow animated fadeIn slow"
