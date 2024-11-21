@@ -584,12 +584,25 @@ html {
   max-width: 100%;
 }
 
+
 #sec-2 {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../Images/bg4.jpg) no-repeat center center/cover;
   text-align: center;
   padding: 3rem 0px 1.8rem;
 }
+#sec-2 .cont {
+  display: flex;
+  flex-direction: column; /* Organiza os itens em coluna */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  text-align: center; /* Centraliza o texto */
+  padding: 10px; /* Adiciona espaçamento interno */
+  line-height: 1.5; /* Ajusta o espaçamento entre linhas */
+}
+
+
+
 #sec-2 .container > h1 {
   color: var(--haccent);
   text-transform: uppercase;
@@ -619,8 +632,8 @@ html {
   margin-top: -75px;
 }
 #sec-2 article figure div:first-of-type {
-  width: 10em;
-  height: 10em;
+  width: 5em;
+  height: 5em;
   background-color: white /* var(--haccent2) */;
   border-radius: 50%;
   display: flex;
@@ -639,13 +652,13 @@ html {
   font-weight: 700;
   margin-bottom: 10px;
   color: var(--haccent2);
+  position: center;
 }
 #sec-2 article figure p {
   color: var(--txtaccent);
   font-size: 0.88rem;
   text-shadow: 1px 1px #73757e;
 }
-
 #sec-3 {
   background-color: var(--txtaccent);
   padding-top: 30px;
@@ -1227,6 +1240,8 @@ html {
   #sec-2 article {
     justify-content: space-evenly;
   }
+
+  
   #sec-2 article figure {
     max-width: 21%;
   }
@@ -1322,12 +1337,6 @@ html {
   }
 }
 
-.product-presentation {
-  text-align: center;
-  padding: 50px;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-}
 
 .product-text {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1337,19 +1346,7 @@ html {
   animation: fadeIn 2s forwards;
   animation-delay: 0.5s;
 }
-.carousel-inner {
-  display: flex;
-  justify-content: center; /* Centraliza as imagens no contêiner */
-  align-items: center;
-}
 
-.carousel-inner img {
-  width: auto; /* Mantém a proporção da imagem */
-  max-width: 600px; /* Define uma largura máxima para as imagens */
-  max-height: 400px; /* Define uma altura máxima para as imagens */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  object-fit: cover; /* Ajusta as imagens para que se encaixem sem distorção */
-}
 
 @media (max-width: 768px) {
   .carousel-inner img {
