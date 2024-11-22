@@ -18,91 +18,126 @@
     <title>Breve Lançamento | Isabel</title>
   </head>
   <body>
-    <a href="index.html">voltar</a>
-    <div class="floor-plan-section">
-      <div class="floor-plan-image">
-        <img src="path/to/your/floorplan.jpg" alt="Planta Completa" />
+    <div class="isabel-background">
+      <div class="floor-plan-section"></div>
+      <a href="index.html">voltar</a>
+      <div class="isabel-banner">
+        <h1 class="isabel-title">Isabel</h1>
+        <p class="isabel-subtitle">Condomínio Edifício</p>
+        <p class="isabel-location">RESIDENCIAL • VIA CAMBUI</p>
       </div>
-      <div class="floor-plan-cards">
-        <div class="floor-plan-card card-a">
-          <h3>Planta A</h3>
-          <p class="details">2 DORMS</p>
-          <p class="size">58,26m²</p>
-          <ul>
-            <li>cozinha</li>
-            <li>sala de estar integrada</li>
-            <li>banheiro social</li>
-            <li>varanda</li>
-            <li>01 suíte</li>
-            <li>01 garagem</li>
-          </ul>
-          <div class="isabel-buttons">
-            <a href="isabel.html">
-              <button class="isabel-btn-primary">EU QUERO</button>
-            </a>
+
+      <hr class="divider" />
+      <div class="location-section">
+        <div class="floor-plan-image">
+          <img src="./Images/planta1.jpg" alt="Planta Completa" />
+        </div>
+        <div class="banner-section">
+          <h1>
+            <span class="large-text">2</span> DORMITÓRIOS
+            <br />
+            <span class="highlight">COM UMA SUÍTE</span>
+          </h1>
+          <p>
+            Somados a um <span class="bold">condomínio completo</span> com
+            conforto, qualidade, diversão, lazer e segurança em
+            <span class="bold">um só lugar</span>.
+          </p>
+        </div>
+      </div>
+      <hr class="divider" />
+      <div class="isabel-image-gallery">
+        <a
+          href="#"
+          class="gallery-img-link"
+          onclick="openModal('./Images/render1.jpeg')"
+        >
+          <img src="./Images/render1.jpeg" alt="Imagem 1" class="gallery-img"
+        /></a>
+        <img src="./Images/render2.jpeg" alt="Imagem 2" class="gallery-img" />
+        <img src="./Images/render1.jpeg" alt="Imagem 7" class="gallery-img" />
+        <img src="./Images/isabel3.jpeg" alt="Imagem 4" class="gallery-img" />
+        <img src="./Images/isabel2.jpeg" alt="Imagem 5" class="gallery-img" />
+        <img src="./Images/isabel4.jpeg" alt="Imagem 6" class="gallery-img" />
+        <img src="./Images/render1.jpeg" alt="Imagem 7" class="gallery-img" />
+        <img src="./Images/render2.jpeg" alt="Imagem 8" class="gallery-img" />
+      </div>
+      <div class="modal" id="image-modal">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <img src="" alt="Imagem Ampliada" id="modal-img" />
+      </div>
+      <hr class="divider" />
+      
+   
+      <section class="isabel-features-section">
+        <div class="isabel-container">
+          <div class="isabel-header">
+            <h2>O QUE O ISABEL</h2>
+            <h1>PODE TE PROPORCIONAR?</h1>
+          </div>
+          <div class="isabel-features-grid">
+            <div class="isabel-feature-item">
+              <img src="https://via.placeholder.com/64x64?text=Ícone" alt="Espaço Gourmet">
+              <p>espaço gourmet</p>
+            </div>
+            <div class="isabel-feature-item">
+              <img src="https://via.placeholder.com/64x64?text=Ícone" alt="Co-working">
+              <p>co-working</p>
+            </div>
+            <div class="isabel-feature-item">
+              <img src="https://via.placeholder.com/64x64?text=Ícone" alt="Planta para PCD">
+              <p>planta para PCD</p>
+            </div>
+            <div class="isabel-feature-item">
+              <img src="https://via.placeholder.com/64x64?text=Ícone" alt="Localização Privilegiada">
+              <p>localização privilegiada</p>
+            </div>
+            <div class="isabel-feature-item">
+              <img src="https://via.placeholder.com/64x64?text=Ícone" alt="Pomar e Horta">
+              <p>pomar e horta</p>
+            </div>
+            <div class="isabel-feature-item">
+              <img src="https://via.placeholder.com/64x64?text=Ícone" alt="Piscina Adulto e Infantil">
+              <p>piscina adulto e infantil</p>
+            </div>
+            <div class="isabel-feature-item">
+              <img src="https://via.placeholder.com/64x64?text=Ícone" alt="Academia">
+              <p>academia</p>
+            </div>
+            <div class="isabel-feature-item">
+              <img src="https://via.placeholder.com/64x64?text=Ícone" alt="Brinquedoteca">
+              <p>brinquedoteca</p>
+            </div>
           </div>
         </div>
-        <div class="floor-plan-card card-b">
-          <h3>Planta B</h3>
-          <p class="details">2 DORMS</p>
-          <p class="size">58,31m²</p>
-          <ul>
-            <li>cozinha</li>
-            <li>sala de estar integrada</li>
-            <li>banheiro social</li>
-            <li>varanda</li>
-            <li>01 suíte</li>
-            <li>01 garagem</li>
-          </ul>
-        </div>
-        <div class="floor-plan-card card-c">
-          <h3>Planta C</h3>
-          <p class="details">3 DORMS</p>
-          <p class="size">116,52m²</p>
-          <ul>
-            <li>cozinha</li>
-            <li>sala de estar integrada</li>
-            <li>área de serviço</li>
-            <li>banheiro social</li>
-            <li>varanda gourmet</li>
-            <li>02 suítes</li>
-            <li>02 garagens</li>
-          </ul>
-        </div>
-        <div class="floor-plan-card card-d">
-          <h3>Planta D</h3>
-          <p class="details">2 DORMS</p>
-          <p class="size">58,31m²</p>
-          <p class="adapt">adaptável PCD</p>
-          <ul>
-            <li>cozinha</li>
-            <li>sala de estar integrada</li>
-            <li>banheiro social</li>
-            <li>varanda</li>
-            <li>01 suíte</li>
-            <li>01 garagem</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <section class="location-section">
+      </section>
+
+
+
+      <hr class="divider" />
+      <section class="location-section">
         <div class="location-container">
-            <div class="location-image">
-                <img src="./Images/location-map.jpg" alt="Mapa de Localização">
-                <!-- Adicione os marcadores e etiquetas aqui -->
-               
-                <!-- Adicione mais marcadores conforme necessário -->
-            </div>
-            <div class="location-text">
-                <h1>Localização</h1>
-                <p>O ISABEL  possui localização privilegiada, com <strong>fácil acesso à Dutra</strong>, próximo a <strong>escolas, hospitais e supermercados</strong>. Tudo o que você precisa ao seu alcance.</p>
-                <address>
-                    <p>Rua madre tereza, 999, São José dos Campos - SP</p>
-                    <p>(12) 0000-0000</p>
-                </address>
-            </div>
+          <div class="location-image">
+            <img
+              src="./Images/IMG-20241122-WA0004.jpg"
+              alt="Mapa de Localização"
+            />
+          </div>
+          <div class="location-text">
+            <h1>Localização</h1>
+            <p>
+              O ISABEL possui localização privilegiada, com
+              <strong>fácil acesso à Dutra</strong>, próximo a
+              <strong>escolas, hospitais e supermercados</strong>. Tudo o que
+              você precisa ao seu alcance.
+            </p>
+            <address>
+              <p>Rua madre tereza, 999, São José dos Campos - SP</p>
+              <p>(12) 0000-0000</p>
+            </address>
+          </div>
         </div>
-    </section>
-    
+      </section>
+    </div>
   </body>
 </html>
