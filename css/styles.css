@@ -83,24 +83,43 @@ body {
 /* Features Grid */
 .isabel-features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
   gap: 20px;
 }
 
 .isabel-feature-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Para posicionar o reflexo corretamente */
+  background-color: none; /* Fundo branco */
+  border: none; /* Borda suave */
+  border-radius: 0px; /* Bordas arredondadas */
+  text-align: center; /* Centraliza o conteúdo */
+  padding: 20px; /* Espaçamento interno */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+  overflow: hidden; /* Garante que o reflexo não extrapole */
 }
 
+/* Efeito de hover */
 /* .isabel-feature-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px); /* Eleva o card */
+/*   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Intensifica a sombra 
 } */
+
+/* Reflexo espelhado */
+.isabel-feature-item::after {
+  content: '';
+  position: absolute;
+  bottom: -50%; /* Ajusta a posição do reflexo */
+  left: 0;
+  width: 100%;
+  height: 50%; /* Altura do reflexo */
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), transparent); /* Gradiente para o reflexo */
+  transform: scaleY(-1); /* Inverte verticalmente para criar o efeito de espelho */
+  z-index: -1; /* Mantém o reflexo atrás do conteúdo */
+  pointer-events: none; /* Ignora interações no reflexo */
+  background-attachment: fixed;
+}
+
 
 .isabel-feature-item img {
   width: 64px;
@@ -403,28 +422,19 @@ ul li {
 }
 
 .modal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  max-width: 80%; /* A imagem ocupará no máximo 80% da largura do modal */
+  max-height: 80%; /* A imagem ocupará no máximo 80% da altura do modal */
+  width: auto; /* Mantém a proporção da largura */
+  height: auto; /* Mantém a proporção da altura */
+  object-fit: contain; /* Garante que a imagem se ajuste ao espaço sem distorcer */
+  border-radius: 10px; /* Bordas arredondadas opcionais */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra elegante */
 }
 
 .modal.active {
   display: flex; /* Exibe o modal ao ativar a classe */
 }
 
-/* Botão para fechar o modal */
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2rem;
-  color: #fff;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -943,70 +953,6 @@ html {
 }
 
 
-
-
-/* SECTION 3 = */
-/* 
-#sec-3 {
-  background-color:whitesmoke;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-#sec-3 h1 {
-  text-transform: uppercase;
-  font-size: 1.7rem;
-  margin-bottom: 30px;
-  text-align: center;
-  color: var(--bgaccent);
-  font-weight: 900;
-}
-#sec-3 .cont {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: column;
-  align-content: space-around;
-}
-#sec-3 .card {
-  width: 90%;
-  margin-bottom: 30px;
-  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro *//*
-  border-radius: 10px; /* Bordas arredondadas *//*
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra *//*
-  overflow: hidden; /* Esconde conteúdo excedente *//*
-}
-#sec-3 .card p {
-  text-align: justify;
-  word-break: break-all;
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
-#sec-3 .card > div {
-  position: relative;
-}
-#sec-3 .caption {
-  width: 100%;
-  text-align: center;
-  margin: 0px;
-  color: var(--txtaccent);
-  background-color: rgba(0, 0, 0, 0.65);
-  padding: 8px 15px 15px;
-  position: absolute;
-  bottom: 0px;
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-#sec-3 a {
-  color: var(--txtaccent);
-  background-color: var(--haccent);
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 6px 15px;
-  border-radius: 5px;
-  display: inline-block;
-} */
 /* SECTION 4 */
 #sec-4 {
   display:flex;
@@ -1665,8 +1611,8 @@ html {
 }
 
 .whatsapp-button img {
-  width: 65px;
-  height: 65px;
+  width: 78px;
+  height: 78px;
 }
 
 @media (max-width: 600px) {

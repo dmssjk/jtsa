@@ -89,20 +89,87 @@
       <div class="container2">
         <div class="isabel-image-gallery">
           <a
-            href="#"
             class="gallery-img-link"
             onclick="openModal('./Images/render1.jpeg')"
           >
-            <img src="./Images/render1.jpeg" alt="Imagem 1" class="gallery-img"
-          /></a>
-          <img src="./Images/render2.jpeg" alt="Imagem 2" class="gallery-img" />
-          <img src="./Images/render1.jpeg" alt="Imagem 7" class="gallery-img" />
-          <img src="./Images/isabel3.jpeg" alt="Imagem 4" class="gallery-img" />
-          <img src="./Images/isabel2.jpeg" alt="Imagem 5" class="gallery-img" />
-          <img src="./Images/isabel4.jpeg" alt="Imagem 6" class="gallery-img" />
-          <img src="./Images/render1.jpeg" alt="Imagem 7" class="gallery-img" />
-          <img src="./Images/render2.jpeg" alt="Imagem 8" class="gallery-img" />
+            <img
+              src="./Images/render1.jpeg"
+              alt="Imagem 1"
+              class="gallery-img"
+            />
+          </a>
+          <a
+            class="gallery-img-link"
+            onclick="openModal('./Images/render2.jpeg')"
+          >
+            <img
+              src="./Images/render2.jpeg"
+              alt="Imagem 2"
+              class="gallery-img"
+            />
+          </a>
+          <a
+            class="gallery-img-link"
+            onclick="openModal('./Images/render1.jpeg')"
+          >
+            <img
+              src="./Images/render1.jpeg"
+              alt="Imagem 3"
+              class="gallery-img"
+            />
+          </a>
+          <a
+            class="gallery-img-link"
+            onclick="openModal('./Images/isabel3.jpeg')"
+          >
+            <img
+              src="./Images/isabel3.jpeg"
+              alt="Imagem 4"
+              class="gallery-img"
+            />
+          </a>
+          <a
+            class="gallery-img-link"
+            onclick="openModal('./Images/isabel2.jpeg')"
+          >
+            <img
+              src="./Images/isabel2.jpeg"
+              alt="Imagem 5"
+              class="gallery-img"
+            />
+          </a>
+          <a
+            class="gallery-img-link"
+            onclick="openModal('./Images/isabel4.jpeg')"
+          >
+            <img
+              src="./Images/isabel4.jpeg"
+              alt="Imagem 6"
+              class="gallery-img"
+            />
+          </a>
+          <a
+            class="gallery-img-link"
+            onclick="openModal('./Images/render1.jpeg')"
+          >
+            <img
+              src="./Images/render1.jpeg"
+              alt="Imagem 7"
+              class="gallery-img"
+            />
+          </a>
+          <a
+            class="gallery-img-link"
+            onclick="openModal('./Images/render2.jpeg')"
+          >
+            <img
+              src="./Images/render2.jpeg"
+              alt="Imagem 8"
+              class="gallery-img"
+            />
+          </a>
         </div>
+
         <div class="modal" id="image-modal">
           <button class="modal-close" onclick="closeModal()">×</button>
           <img src="" alt="Imagem Ampliada" id="modal-img" />
@@ -265,19 +332,15 @@
             <h1>Tem alguma dúvida?</h1>
             <h2>Entre em contato</h2>
           </aside>
-          <form id="form" action="/" method="">
+
+          <form id="form">
             <input type="text" name="name" placeholder="Nome" required />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              required
-            />
+            <input type="email" name="email" id="email" placeholder="Email" required />
             <input type="text" name="message" placeholder="Mensagem" required />
             <input type="submit" value="Enviar" id="submit" />
             <p id="msg"></p>
           </form>
+          
         </div>
       </div>
     </section>
@@ -319,17 +382,15 @@
     </section>
 
     <a
-      href="https://wa.me/SEU_NUMERO?text=Olá, gostaria de mais informações!"
+      href="https://wa.me/5512988417997?text=Olá, gostaria de mais informações!"
       class="whatsapp-button"
       target="_blank"
     >
       <img src="./Images/whatsapp.png" alt="WhatsApp" />
     </a>
 
-    <script src="js/wow.min.js"></script>
-    <script>
-      new WOW().init();
-    </script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/wow.min.js" defer></script>
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/scripts.js" defer></script>
   </body>
 </html>
