@@ -5,6 +5,35 @@
 const form = document.getElementById("form");
 const msg = document.getElementById("msg");
 
+// Seleciona todos os elementos dentro do main-container
+const fadeElements = document.querySelectorAll('.main-container .fade-in');
+
+// Função para verificar se o elemento está na viewport
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top <= window.innerHeight && rect.bottom >= 0;
+}
+
+// Adiciona a classe 'show' com atraso crescente
+function fadeInElementsInSequence() {
+  let delay = 0; // Inicializa o atraso
+  fadeElements.forEach((el) => {
+    if (isElementInViewport(el)) {
+      setTimeout(() => {
+        el.classList.add('show'); // Adiciona a classe com delay
+      }, delay);
+      delay += 300; // Incrementa o atraso para o próximo item (300ms)
+    }
+  });
+}
+
+// Escuta o evento de scroll
+window.addEventListener('scroll', fadeInElementsInSequence);
+
+// Verifica ao carregar a página
+fadeInElementsInSequence();
+
+
 // Adiciona o evento "submit" ao formulário
 form.addEventListener("submit", async (event) => {
   event.preventDefault(); // Previne o envio padrão do formulário
