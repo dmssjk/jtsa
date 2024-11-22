@@ -477,6 +477,23 @@ html {
   --font-body: 'Arial', sans-serif;
 }
   
+.blinking-text {
+  font-size: 68px; /* Tamanho da fonte */
+  font-weight: bold;
+  color: var(--bgaccent_withOpacity); /* Cor do texto (vermelho) */
+  text-align: center;
+  animation: blink 1.5s 3; /* Animação de piscar */
+}
+
+/* Definição da animação */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1; /* Totalmente visível */
+  }
+  50% {
+    opacity: 0; /* Invisível */
+  }
+}
 
 
 /* Isabel Banner Styling */
@@ -604,7 +621,17 @@ html {
   width: 95%;
   margin: 0px auto;
   padding: 0px;
+  
 }
+.container-top {
+  width: 95%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex; /* Torna o container um flexbox */
+  justify-content: space-between; /* Distribui os itens ao longo do eixo horizontal */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+}
+
 
 .container2 {
   width: 95%;
@@ -617,17 +644,20 @@ html {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(../Images/banner.jpg) no-repeat top center/cover;
     background-attachment: fixed; /* Adicione esta linha */
+    
 }
 #sec-0 header.top {
   background-color: var(--bgaccent);
   font-size: 0.85rem;
   color: var(--txtaccent4);
   padding-top: 6px;
+  
 }
 #sec-0 header.top .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  
 }
 #sec-0 header.top p {
   display: flex;
