@@ -1,134 +1,155 @@
 // ========================
 // VALIDATE USER EMAIL
 // ========================
-// Seleciona o formulário e o local para mensagens
-const form = document.getElementById("form");
-const msg = document.getElementById("msg");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("form");
+  const msg = document.getElementById("msg");
 
-// Seleciona todos os elementos dentro do main-container
-const fadeElements = document.querySelectorAll('.main-container .fade-in');
+  if (form && msg) {
+    // Adiciona o evento "submit" ao formulário
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault(); // Previne o envio padrão do formulário
 
-// Função para verificar se o elemento está na viewport
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return rect.top <= window.innerHeight && rect.bottom >= 0;
-}
+      // Exibe mensagem de status enquanto envia
+      msg.innerHTML = "Enviando sua mensagem...";
 
-// Adiciona a classe 'show' com atraso crescente
-function fadeInElementsInSequence() {
-  let delay = 0; // Inicializa o atraso
-  fadeElements.forEach((el) => {
-    if (isElementInViewport(el)) {
-      setTimeout(() => {
-        el.classList.add('show'); // Adiciona a classe com delay
-      }, delay);
-      delay += 300; // Incrementa o atraso para o próximo item (300ms)
-    }
-  });
-}
+      // Captura os dados do formulário
+      const formData = new FormData(form);
 
-// Escuta o evento de scroll
-window.addEventListener('scroll', fadeInElementsInSequence);
+      try {
+        // Envia os dados para o Formspree
+        const response = await fetch("https://formspree.io/f/xqaklopa", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+          body: formData,
+        });
 
-// Verifica ao carregar a página
-fadeInElementsInSequence();
+        // Verifica o status da resposta
+        if (response.ok) {
+          msg.innerHTML = "Mensagem enviada com sucesso! Obrigado.";
+          form.reset(); // Limpa o formulário após o envio
+        } else {
+          msg.innerHTML =
+            "Ocorreu um erro ao enviar sua mensagem. Tente novamente.";
+        }
+      } catch (error) {
+        console.error("Erro ao enviar formulário:", error);
+        msg.innerHTML =
+          "Ocorreu um erro. Verifique sua conexão e tente novamente.";
+      }
+    });
+  }
 
+  // ========================
+  // FADE-IN ELEMENTS ON SCROLL
+  // ========================
+  const fadeElements = document.querySelectorAll(".main-container .fade-in");
 
-// Adiciona o evento "submit" ao formulário
-form.addEventListener("submit", async (event) => {
-  event.preventDefault(); // Previne o envio padrão do formulário
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.bottom >= 0;
+  }
 
-  // Exibe mensagem de status enquanto envia
-  msg.innerHTML = "Enviando sua mensagem...";
+  function fadeInElementsInSequence() {
+    let delay = 0;
+    fadeElements.forEach((el) => {
+      if (isElementInViewport(el)) {
+        setTimeout(() => {
+          el.classList.add("show");
+        }, delay);
+        delay += 300;
+      }
+    });
+  }
 
-  // Captura os dados do formulário
-  const formData = new FormData(form);
+  if (fadeElements.length > 0) {
+    window.addEventListener("scroll", fadeInElementsInSequence);
+    fadeInElementsInSequence();
+  }
 
-  try {
-    // Envia os dados para o Formspree
-    const response = await fetch("https://formspree.io/f/xqaklopa", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-      },
-      body: formData,
+  // ========================
+  // SEARCH BAR FUNCTIONALITY
+  // ========================
+  const search = document.getElementById("search");
+  const searchBar = document.getElementById("searchBar");
+
+  if (search && searchBar) {
+    search.addEventListener("click", () => {
+      searchBar.classList.toggle("show");
+      searchBar.classList.toggle("hide");
     });
 
-    // Verifica o status da resposta
-    if (response.ok) {
-      msg.innerHTML = "Mensagem enviada com sucesso! Obrigado.";
-      form.reset(); // Limpa o formulário após o envio
-    } else {
-      msg.innerHTML =
-        "Ocorreu um erro ao enviar sua mensagem. Tente novamente.";
-    }
-  } catch (error) {
-    console.error("Erro ao enviar formulário:", error);
-    msg.innerHTML = "Ocorreu um erro. Verifique sua conexão e tente novamente.";
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && searchBar.classList.contains("show")) {
+        searchBar.classList.toggle("show");
+        searchBar.classList.toggle("hide");
+      }
+    });
   }
-});
 
-// ========================
-// SEARCH BAR FUNCTIONALITY
-// ========================
-const search = document.getElementById("search");
-const searchBar = document.getElementById("searchBar");
-
-// Abrir e fechar barra de pesquisa ao clicar no ícone
-search.addEventListener("click", () => {
-  searchBar.classList.toggle("show");
-  searchBar.classList.toggle("hide");
-});
-
-// Fechar barra de pesquisa ao pressionar "Escape"
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && searchBar.classList.contains("show")) {
-    searchBar.classList.toggle("show");
-    searchBar.classList.toggle("hide");
-  }
-});
-
-// ========================
-// WHATSAPP BUTTON
-// ========================
-window.onscroll = function () {
+  // ========================
+  // WHATSAPP BUTTON
+  // ========================
   const whatsappButton = document.querySelector(".whatsapp-button");
-  whatsappButton.style.display = window.scrollY > 100 ? "flex" : "none";
-};
+  if (whatsappButton) {
+    window.addEventListener("scroll", () => {
+      whatsappButton.style.display = window.scrollY > 100 ? "flex" : "none";
+    });
+  }
 
-// ========================
-// MODAL FUNCTIONALITY
-// ========================
-
-// Abrir modal sem alterar a posição da página
-function openModal(imageSrc) {
+  // ========================
+  // MODAL FUNCTIONALITY
+  // ========================
   const modal = document.getElementById("image-modal");
   const modalImg = document.getElementById("modal-img");
 
-  // Define a imagem no modal
-  modalImg.src = imageSrc;
+  if (modal && modalImg) {
+    window.openModal = function (imageSrc) {
+      modalImg.src = imageSrc;
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    };
 
-  // Exibe o modal
-  modal.classList.add("active");
+    window.closeModal = function () {
+      modal.classList.remove("active");
+      document.body.style.overflow = "auto";
+    };
+  }
 
-  // Desativa o scroll do corpo, mas mantém a posição atual
-  document.body.style.overflow = "hidden";
-}
+  // ========================
+  // CAROUSEL FUNCTIONALITY
+  // ========================
+  const slides = document.querySelectorAll(".custom-carousel-slide");
+  const indicators = document.querySelectorAll(
+    ".custom-carousel-indicators button"
+  );
 
-// Fechar modal e restaurar o scroll
-function closeModal() {
-  const modal = document.getElementById("image-modal");
+  if (slides.length > 0 && indicators.length > 0) {
+    let currentIndex = 0;
 
-  // Esconde o modal
-  modal.classList.remove("active");
+    const updateCarousel = () => {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle("active", index === currentIndex);
+      });
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle("active", index === currentIndex);
+      });
+    };
 
-  // Restaura o scroll
-  document.body.style.overflow = "auto";
-}
+    const autoPlay = () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    };
 
-// ========================
-// DEBUGGING HELPER (Opcional)
-// ========================
-document.addEventListener("keydown", (event) => {
-  console.log(`Tecla pressionada: ${event.key}`);
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        currentIndex = index;
+        updateCarousel();
+      });
+    });
+
+    setInterval(autoPlay, 3000);
+  }
 });

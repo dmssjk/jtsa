@@ -11,6 +11,103 @@ body {
   overflow-x: hidden;
 }
 
+
+.custom-carousel {
+  width: 90%;
+  max-width: 600px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.custom-carousel-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.custom-carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease, transform 1s ease;
+  position: absolute;
+}
+
+.custom-carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+}
+
+.custom-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.custom-carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.custom-carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.custom-carousel-indicators button.active {
+  background: #ff5722;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .custom-carousel {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-carousel {
+    height: 250px;
+  }
+}
+
+.custom-carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(20px); /* Efeito inicial: fora da visão */
+  transition: opacity 1s ease, transform 1s ease; /* Animação suave */
+}
+
+/* Estilo para o título ativo */
+.custom-carousel-slide.active .custom-carousel-caption {
+  opacity: 1; /* Totalmente visível */
+  transform: translateY(0); /* Volta para o lugar correto */
+}
+
+
 .cont {
   display: flex;
   gap: 20px;
