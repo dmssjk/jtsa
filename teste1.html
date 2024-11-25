@@ -1,145 +1,127 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrossel Responsivo Elegante</title>
+  <meta name="description" content="Mission, Vision, and Values - Card Layout">
+  <title>Mission, Vision & Values</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* General Reset */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #222;
-      color: #fff;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      flex-direction: column;
+      padding: 20px;
+      min-height: 100vh;
     }
 
-    .carousel {
-      width: 90%;
-      max-width: 600px;
-      height: 350px;
-      overflow: hidden;
-      position: relative;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    /* Title Styles */
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #333;
+      text-align: center;
     }
 
-    .carousel-track {
+    /* Card Container */
+    .card-container {
       display: flex;
-      transition: transform 1s ease-in-out;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 1200px;
     }
 
-    .carousel-slide {
-      min-width: 100%;
-      height: 100%;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: opacity 1s ease, transform 1s ease;
-      position: absolute;
-    }
-
-    .carousel-slide.active {
-      opacity: 1;
-      transform: scale(1);
-      position: relative;
-    }
-
-    .carousel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .carousel-indicators {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-    }
-
-    .carousel-indicators button {
-      width: 12px;
-      height: 12px;
+    /* Individual Card */
+    .card {
       background: #fff;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      opacity: 0.6;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .carousel-indicators button.active {
-      background: #ff5722;
-      opacity: 1;
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
+    /* Card Icons */
+    .card-icon {
+      font-size: 50px;
+      color: #4a90e2;
+      margin-bottom: 15px;
+    }
+
+    /* Card Title */
+    .card-title {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    /* Card Text */
+    .card-text {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* Responsive Design */
     @media (max-width: 768px) {
-      .carousel {
-        height: 300px;
+      .card {
+        width: 100%;
       }
-    }
 
-    @media (max-width: 480px) {
-      .carousel {
-        height: 250px;
+      h1 {
+        font-size: 28px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="carousel">
-    <div class="carousel-track">
-      <div class="carousel-slide active">
-        <img src="https://via.placeholder.com/800x400/007BFF/FFFFFF?text=Foto+1" alt="Foto 1">
-      </div>
-      <div class="carousel-slide">
-        <img src="https://via.placeholder.com/800x400/FF5722/FFFFFF?text=Foto+2" alt="Foto 2">
-      </div>
-      <div class="carousel-slide">
-        <img src="https://via.placeholder.com/800x400/4CAF50/FFFFFF?text=Foto+3" alt="Foto 3">
-      </div>
+  <h1>Mission, Vision & Values</h1>
+  
+  <!-- Card Container -->
+  <div class="card-container">
+    <!-- Mission Card -->
+    <div class="card">
+      <div class="card-icon">🚀</div>
+      <h2 class="card-title">Our Mission</h2>
+      <p class="card-text">
+        To inspire and nurture the human spirit – one person, one product, and one neighborhood at a time. We aim to create solutions that leave a lasting positive impact.
+      </p>
     </div>
-    <div class="carousel-indicators">
-      <button class="active"></button>
-      <button></button>
-      <button></button>
+
+    <!-- Vision Card -->
+    <div class="card">
+      <div class="card-icon">🌟</div>
+      <h2 class="card-title">Our Vision</h2>
+      <p class="card-text">
+        To be the global leader in quality and innovation, providing exceptional experiences that unite people and communities through shared values.
+      </p>
+    </div>
+
+    <!-- Values Card -->
+    <div class="card">
+      <div class="card-icon">💡</div>
+      <h2 class="card-title">Our Values</h2>
+      <p class="card-text">
+        Integrity, collaboration, and passion drive everything we do. We are committed to sustainability, inclusivity, and fostering a culture of excellence.
+      </p>
     </div>
   </div>
-
-  <script>
-    const slides = document.querySelectorAll('.carousel-slide');
-    const indicators = document.querySelectorAll('.carousel-indicators button');
-    let currentIndex = 0;
-
-    const updateCarousel = () => {
-      slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentIndex);
-      });
-      indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentIndex);
-      });
-    };
-
-    const autoPlay = () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateCarousel();
-    };
-
-    // Atualiza o índice com clique nos indicadores
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentIndex = index;
-        updateCarousel();
-      });
-    });
-
-    // Troca automaticamente a cada 3 segundos
-    setInterval(autoPlay, 3000);
-  </script>
 </body>
 </html>
