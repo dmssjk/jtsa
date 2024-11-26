@@ -42,32 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ========================
-  // FADE-IN ELEMENTS ON SCROLL
-  // ========================
-  const fadeElements = document.querySelectorAll(".main-container .fade-in");
-
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top <= window.innerHeight && rect.bottom >= 0;
-  }
-
-  function fadeInElementsInSequence() {
-    let delay = 0;
-    fadeElements.forEach((el) => {
-      if (isElementInViewport(el)) {
-        setTimeout(() => {
-          el.classList.add("show");
-        }, delay);
-        delay += 300;
-      }
-    });
-  }
-
-  if (fadeElements.length > 0) {
-    window.addEventListener("scroll", fadeInElementsInSequence);
-    fadeInElementsInSequence();
-  }
+ 
 
   // ========================
   // SEARCH BAR FUNCTIONALITY
@@ -153,3 +128,17 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(autoPlay, 3000);
   }
 });
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const images = document.querySelectorAll('.img1');
+        
+        // Aguarde um pequeno atraso para garantir que as imagens estejam carregadas
+        setTimeout(() => {
+            images.forEach(image => {
+                image.classList.add('fade-in'); // Adiciona a classe para ativar o fade-in
+            });
+        }, 100); // 100ms de atraso para evitar problemas com o carregamento inicial
+    });
+</script>
