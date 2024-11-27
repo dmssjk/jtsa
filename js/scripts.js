@@ -1,23 +1,21 @@
-// ========================
-// VALIDATE USER EMAIL
-// ========================
+=
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form");
   const msg = document.getElementById("msg");
 
   if (form && msg) {
-    // Adiciona o evento "submit" ao formulário
+   
     form.addEventListener("submit", async (event) => {
-      event.preventDefault(); // Previne o envio padrão do formulário
+      event.preventDefault(); 
 
-      // Exibe mensagem de status enquanto envia
+    
       msg.innerHTML = "Enviando sua mensagem...";
 
-      // Captura os dados do formulário
+ 
       const formData = new FormData(form);
 
       try {
-        // Envia os dados para o Formspree
+        
         const response = await fetch("https://formspree.io/f/xqaklopa", {
           method: "POST",
           headers: {
