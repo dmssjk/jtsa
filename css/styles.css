@@ -8,11 +8,7 @@ body {
   box-sizing: border-box;
   outline-style: none;
   overflow-x: hidden;
-  font-family: "Bebas Neue", sans-serif;
-  
-  
-  
-  
+  font-family: "Bebas Neue", sans-serif; 
 }
 
 :root {
@@ -37,12 +33,65 @@ body {
   --font-body: 'Arial', sans-serif;
 }
 
+.carousel {
+  position: relative;
+  width: 80%; /* Largura ajustável */
+  height: 300px;
+  overflow: hidden; /* Esconde as imagens fora do espaço visível */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/* Faixa do carousel */
+.carousel-track {
+  display: flex;
+  justify-content: center; /* Garante que o track esteja centralizado */
+  align-items: center;
+  transition: transform 0.8s ease-in-out; /* Animação suave ao mudar de imagem */
+}
+
+/* Cada imagem */
+.carousel-item {
+position: relative;
+  width: 80%; /* Largura fixa para cada imagem */
+  height: 300px; /* Altura fixa */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px; /* Espaçamento entre imagens */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover; /* Ajusta a imagem para caber no espaço sem distorcer */
+  object-position: center; /* Centraliza o conteúdo da imagem */
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* A imagem principal fica maior */
+.carousel-item.active {
+  transform: scale(1.3); /* Aumenta a escala da imagem */
+  z-index: 10; /* Eleva a imagem principal */
+  border: 0cap solid rgb(12, 10, 10); /* Destaque na borda da imagem principal */
+  opacity: 1;
+
+}
+
+/* As imagens laterais ficam menores e menos visíveis */
+.carousel-item {
+  opacity: 0.5;
+}
+
+/* Ajusta o estado de imagens secundárias */
+.carousel-item:not(.active) {
+  transform: scale(0.8); /* Escala reduzida para imagens laterais */
+  z-index: 5;
+}
 
 /* Navbar Container */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #1c1c1c;
   padding: 10px 20px;
@@ -59,6 +108,7 @@ body {
 
 /* Lista de links da navbar */
 .nav-links {
+  align-items: center;
   display: flex;
   list-style: none;
   gap: 30px; /* Espaçamento entre os itens */
@@ -752,11 +802,13 @@ header.top {
   align-items: center;
   text-align: center;
   padding: 3rem 0px;
+  flex-direction: column;
+  gap: 2rem;
 }
 #sec-0 .container1 {
   max-width: 80%; 
   margin: 0 auto;
-  text-align: center;
+  padding: 20px;
   
 }
 #sec-0 article h1 {

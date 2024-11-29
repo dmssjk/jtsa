@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel Centralizado</title>
+  <style>
+    /* Estilo do corpo */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298); /* Fundo gradiente */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Container do carousel */
+    .carousel {
+      position: relative;
+      width: 80%; /* Largura ajustável */
+      height: 300px;
+      overflow: hidden; /* Esconde as imagens fora do espaço visível */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Faixa do carousel */
+    .carousel-track {
+      display: flex;
+      justify-content: center; /* Garante que o track esteja centralizado */
+      align-items: center;
+      transition: transform 0.8s ease-in-out; /* Animação suave ao mudar de imagem */
+    }
+
+    /* Cada imagem */
+    .carousel-item {
+      width: 300px; /* Largura fixa para cada imagem */
+      height: 300px; /* Altura fixa */
+      margin: 0 10px; /* Espaçamento entre imagens */
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      object-fit: cover; /* Ajusta a imagem para caber no espaço sem distorcer */
+      object-position: center; /* Centraliza o conteúdo da imagem */
+      transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+
+    /* A imagem principal fica maior */
+    /* .carousel-item.active {
+      transform: scale(1.3); /* Aumenta a escala da imagem */
+  /* /* /*     z-index: 10; /* Eleva a imagem principal */
+     /*  border: 0cap solid rgb(12, 10, 10); /* Destaque na borda da imagem principal */
+      /* opacity: 1; */
+ */
+    } */ */ */ */
+
+    /* As imagens laterais ficam menores e menos visíveis */
+    .carousel-item {
+      opacity: 0.5;
+    }
+
+    /* Ajusta o estado de imagens secundárias */
+    .carousel-item:not(.active) {
+      transform: scale(0.8); /* Escala reduzida para imagens laterais */
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="./Images/IMG-20241122-WA0001.jpg" alt="Image 1" class="carousel-item">
+      <img src="./Images/IMG-20241122-WA0002.jpg" alt="Image 2" class="carousel-item">
+      <img src="./Images/IMG-20241122-WA0003.jpg" alt="Image 3" class="carousel-item">
+      <img src="./Images/IMG-20241122-WA0004.jpg" alt="Image 4" class="carousel-item">
+      <img src="./Images/IMG-20241122-WA0005.jpg" alt="Image 5" class="carousel-item">
+    </div>
+  </div>
+  <script>
+    // Seleciona os elementos do carousel
+    const track = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-item');
+
+    let currentIndex = 0;
+    const delay = 3000; // Tempo de cada imagem (3 segundos)
+
+    // Função para atualizar as classes de destaque
+    function updateCarousel() {
+      // Remove a classe "active" de todas as imagens
+      items.forEach((item, index) => {
+        item.classList.remove('active');
+        item.style.zIndex = 5; // Define todas as imagens em segundo plano
+      });
+
+      // Define a nova imagem principal
+      const activeItem = items[currentIndex];
+      activeItem.classList.add('active');
+      activeItem.style.zIndex = 10;
+
+      // Move a faixa do carousel
+      const offset = -(activeItem.offsetWidth + 20) * currentIndex + (track.offsetWidth / 2 - activeItem.offsetWidth / 2);
+      track.style.transform = `translateX(${offset}px)`;
+
+      // Atualiza o índice para a próxima imagem
+      currentIndex = (currentIndex + 1) % items.length;
+    }
+
+    // Configura o carousel para alternar automaticamente
+    setInterval(updateCarousel, delay);
+
+    // Atualiza a primeira imagem ao carregar
+    updateCarousel();
+  </script>
+</body>
+</html>

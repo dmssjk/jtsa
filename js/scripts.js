@@ -88,18 +88,52 @@ let titleText = " JTSA Construtora | BREVE LANÇAMENTO - ISABEL | ";
 
 // Função para animar o título
 function scrollTitle() {
-    // Move o primeiro caractere para o final do texto
-    titleText = titleText.substring(1) + titleText.charAt(0);
-    // Atualiza o título da aba
-    document.title = titleText;
+  // Move o primeiro caractere para o final do texto
+  titleText = titleText.substring(1) + titleText.charAt(0);
+  // Atualiza o título da aba
+  document.title = titleText;
 }
 
 // Configura um intervalo para a rolagem (velocidade de 200ms)
 setInterval(scrollTitle, 200);
 
 function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('active');
+  const navLinks = document.querySelector(".nav-links");
+  navLinks.classList.toggle("active");
 }
 
+// Seleciona os elementos do carousel
+const track = document.querySelector(".carousel-track");
+const items = document.querySelectorAll(".carousel-item");
 
+let currentIndex = 0;
+const delay = 3000; // Tempo de cada imagem (3 segundos)
+
+// Função para atualizar as classes de destaque
+function updateCarousel() {
+  // Remove a classe "active" de todas as imagens
+  items.forEach((item, index) => {
+    item.classList.remove("active");
+    item.style.zIndex = 5; // Define todas as imagens em segundo plano
+  });
+
+  // Define a nova imagem principal
+  const activeItem = items[currentIndex];
+  activeItem.classList.add("active");
+  activeItem.style.zIndex = 10;
+
+  // Move a faixa do carousel
+  const offset =
+    -(activeItem.offsetWidth + 20) * currentIndex +
+    (track.offsetWidth / 2 - activeItem.offsetWidth / 2);
+  track.style.transform = `translateX(${offset}px)`;
+
+  // Atualiza o índice para a próxima imagem
+  currentIndex = (currentIndex + 1) % items.length;
+}
+
+// Configura o carousel para alternar automaticamente
+setInterval(updateCarousel, delay);
+
+// Atualiza a primeira imagem ao carregar
+updateCarousel();
