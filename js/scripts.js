@@ -78,6 +78,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const whatsappButton = document.querySelector(".whatsapp-button");
 
   if (!whatsappButton) {
-    console.warn("Elemento com a classe '.whatsapp-button' não foi encontrado.");
+    console.warn(
+      "Elemento com a classe '.whatsapp-button' não foi encontrado."
+    );
   }
 });
+// Texto inicial que será rolado
+let titleText = " JTSA Construtora | BREVE LANÇAMENTO - ISABEL | ";
+
+// Função para animar o título
+function scrollTitle() {
+    // Move o primeiro caractere para o final do texto
+    titleText = titleText.substring(1) + titleText.charAt(0);
+    // Atualiza o título da aba
+    document.title = titleText;
+}
+
+// Configura um intervalo para a rolagem (velocidade de 200ms)
+setInterval(scrollTitle, 200);
+
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
+
+
