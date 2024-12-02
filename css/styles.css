@@ -637,13 +637,12 @@ html {
 }
 
 .img1 {
-  display: block; 
-  max-width: 100%; 
-  height: auto; 
-  border-radius: 0; 
-  border: none; 
-  margin: 0 auto; 
-  cursor: pointer;   
+  position: absolute; /* Faz o logo sair do fluxo padrão do layout */
+  top: 20px; /* Ajusta a posição do logo a partir do topo */
+  left: 20px; /* Ajusta a posição do logo a partir da esquerda */
+  z-index: 10; /* Garante que o logo esteja acima do carrossel */
+  width: 100px; /* Define o tamanho do logo */
+  height: auto; /* Mantém a proporção da imagem */
 }
 
 
@@ -719,7 +718,7 @@ header.top {
 
 
 #sec-0 {
-  background: linear-gradient(135deg, #1a237e, #3949ab, #4fc3f7); /* Gradiente principal */
+  background-color: ; /* cor de fundo sec-0 */
   
   
  
