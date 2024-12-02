@@ -689,8 +689,6 @@ html {
 }
 
 
-
-
 header.top {
   padding: 0px 0;
 }
@@ -1675,61 +1673,3 @@ padding-bottom: 50px;
   }
   
   /* Estilização geral do container */
-.unique-carousel-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Slides do carousel */
-.unique-carousel-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-.unique-carousel-slide.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.unique-carousel-slide.inactive {
-  opacity: 0;
-  transform: scale(1.1);
-}
-
-/* Ajuste das imagens no carousel */
-.unique-carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Estilização do logo fixo */
-.unique-carousel-logo {
-  position: absolute;
-  top: 20px; /* Ajuste conforme necessário */
-  left: 20px; /* Ajuste conforme necessário */
-  z-index: 10;
-}
-
-.unique-carousel-logo img {
-  width: 150px; /* Ajuste conforme necessário */
-  height: auto;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .unique-carousel-section {
-    height: 60vh;
-  }
-
-  .unique-carousel-logo img {
-    width: 100px;
-  }
-}
