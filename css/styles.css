@@ -638,12 +638,26 @@ html {
 
 .img1 {
   position: absolute; /* Faz o logo sair do fluxo padrão do layout */
-  top: 20px; /* Ajusta a posição do logo a partir do topo */
-  left: 20px; /* Ajusta a posição do logo a partir da esquerda */
-  z-index: 10; /* Garante que o logo esteja acima do carrossel */
-  width: 100px; /* Define o tamanho do logo */
+  top: 50%; /* Centraliza verticalmente com base no elemento pai */
+  left: 50%; /* Centraliza horizontalmente com base no elemento pai */
+  transform: translate(-50%, -50%); /* Move o centro do logo para alinhar com o ponto central */
+  z-index: 100; /* Garante que o logo esteja acima do carrossel */
+  max-width: 100%; /* Limita a largura máxima para responsividade */
   height: auto; /* Mantém a proporção da imagem */
 }
+
+@media (max-width: 768px) {
+  .img1 {
+    max-width: 60%; /* Ajusta o tamanho do logo para telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .img1 {
+    max-width: 50%; /* Reduz ainda mais o tamanho em dispositivos menores */
+  }
+}
+
 
 
 
