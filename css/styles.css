@@ -89,6 +89,69 @@ position: relative;
   z-index: 5;
 }
 
+@media (max-width: 1024px) {
+  .carousel {
+    width: 90%; /* Ajusta a largura do carrossel */
+    height: 250px; /* Reduz a altura */
+  }
+
+  .carousel-item {
+    width: 70%; /* Reduz o tamanho das imagens */
+    height: 250px; /* Altura ajustada */
+  }
+
+  .carousel-item.active {
+    transform: scale(1.2); /* Escala reduzida para manter proporção */
+  }
+
+  .carousel-item:not(.active) {
+    transform: scale(0.7); /* Reduz a escala de imagens laterais */
+  }
+}
+
+/* Para telas menores que 768px (dispositivos móveis grandes) */
+@media (max-width: 768px) {
+  .carousel {
+    width: 95%; /* Usa quase toda a largura da tela */
+    height: 200px; /* Altura reduzida */
+  }
+
+  .carousel-item {
+    width: 80%; /* Ajusta o tamanho das imagens */
+    height: 200px; /* Altura ajustada */
+  }
+
+  .carousel-item.active {
+    transform: scale(1.1); /* Escala menor para manter proporção */
+  }
+
+  .carousel-item:not(.active) {
+    transform: scale(0.6); /* Reduz a escala de imagens laterais */
+  }
+}
+
+/* Para telas menores que 480px (dispositivos móveis pequenos) */
+@media (max-width: 480px) {
+  .carousel {
+    width: 100%; /* Usa toda a largura da tela */
+    height: 150px; /* Altura reduzida */
+  }
+
+  .carousel-item {
+    width: 90%; /* Ajusta o tamanho das imagens */
+    height: 150px; /* Altura ajustada */
+  }
+
+  .carousel-item.active {
+    transform: scale(1); /* Sem escalonamento adicional */
+  }
+
+  .carousel-item:not(.active) {
+    transform: scale(0.5); /* Reduz a escala de imagens laterais */
+  }
+}
+
+
 /* Navbar Container */
 .navbar {
   display: flex;
@@ -569,16 +632,27 @@ html {
 
 @media (max-width: 768px) {
   .img1 {
-    max-width: 60%; /* Ajusta o tamanho do logo para telas menores */
+    position: relative; /* Tira o logo da posição absoluta */
+    top: auto; /* Reseta o posicionamento vertical */
+    left: auto; /* Reseta o posicionamento horizontal */
+    transform: none; /* Remove a transformação */
+    display: block; /* Garante que o logo se comporte como um bloco normal */
+    margin: 0 auto 20px; /* Centraliza horizontalmente e adiciona espaço abaixo */
+    max-width: 60%; /* Ajusta o tamanho do logo */
   }
 }
 
+/* Ajuste para telas menores que 480px */
 @media (max-width: 480px) {
   .img1 {
-    max-width: 50%; /* Reduz ainda mais o tamanho em dispositivos menores */
+    max-width: 50%; /* Reduz ainda mais o tamanho do logo */
   }
 }
 
+/* Garantindo que o carrossel não seja afetado */
+.carousel {
+  margin-top: 20px; /* Adiciona um espaço entre o logo e o carrossel em dispositivos móveis */
+}
 
 
 
