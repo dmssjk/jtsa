@@ -431,7 +431,7 @@ h1 {
   margin-bottom: 30px;
   color: var(--text-light);
   text-align: center;
-}
+  }
 
 
 
@@ -489,26 +489,6 @@ html {
 
 
 
-
-
-
-.blinking-text {
-  font-size: 68px; 
-  font-weight: bold;
-  color: var(--bgaccent_withOpacity); 
-  text-align: center;
-  animation: blink 1.5s 3; 
-}
-
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1; 
-  }
-  50% {
-    opacity: 0; 
-  }
-}
 
 
 
@@ -1139,11 +1119,12 @@ padding-top: 20px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  
   row-gap: 15px;
   color: var(--txtaccent5);
 }
 #sec-6 h1 {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1.25rem;
   margin-bottom: 1.1rem;
 }
@@ -1157,7 +1138,7 @@ padding-top: 20px;
 }
 #sec-6 .about h2 p {
   color: var(--txtaccent1);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 400;
   margin-bottom: 0px;
 }
@@ -1270,22 +1251,6 @@ padding-top: 20px;
   padding: 30px;
 }
 
-.blinking-text {
-  font-size: 68px;
-  font-weight: bold;
-  color: #1a1c27f5;
-  text-align: center;
-  animation: blink 1.5s 3;
-}
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
 
 .banner-content {
   display: flex;
@@ -1498,6 +1463,7 @@ padding-top: 20px;
   }
   #sec-6 .about {
     width: 65%;
+    
   }
   #sec-6 .links {
     width: 20%;
@@ -1691,4 +1657,3 @@ padding-top: 20px;
    
   }
   
-  /* Estilização geral do container */
