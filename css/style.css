@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-body {
+body { 
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -10,6 +10,12 @@ body {
   overflow-x: hidden;
   font-family: "Bebas Neue", sans-serif; 
 }
+
+/* html {
+  font-size: 12px;
+  color: #000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+} */
 
 
 :root {
@@ -33,16 +39,21 @@ body {
   --font-title: 'Playfair Display', serif; 
   --font-body: 'Arial', sans-serif;
 }
-/* aquiiiiiii */
+
+
+/* Carousel */
+
+
 .carousel {
   width: 100%;
-  height: 80vh; 
+  height: 75vh; 
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 50%;
+  opacity: 90%;
+  
   
 }
 
@@ -53,7 +64,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Cor preta com 50% de opacidade */
+  background: rgba(255, 255, 255, 0.5); 
   z-index: 1; /* Coloca o overlay acima das imagens */
   pointer-events: none; /* Permite clicar nos elementos abaixo */
 }
@@ -76,7 +87,7 @@ body {
 
 
 
-/* Navbar Container */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: center;
@@ -86,25 +97,25 @@ body {
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Hamburger Menu */
+
 .hamburger {
-  display: none; /* Esconde em telas grandes */
+  display: none; 
   font-size: 24px;
   color: #ffffff;
   cursor: pointer;
 }
 
-/* Lista de links da navbar */
+
 .nav-links {
   align-items: center;
   display: flex;
   list-style: none;
-  gap: 30px; /* Espaçamento entre os itens */
+  gap: 30px; 
   margin: 0;
   padding: 0;
 }
 
-/* Links individuais */
+
 .navbar-item {
   text-align: center;
   text-decoration: none;
@@ -123,7 +134,7 @@ body {
   transition: color 0.3s ease-in-out;
 }
 
-/* Efeito de hover ou ativo */
+
 .navbar-item:hover,
 .navbar-item.active {
   color: #007bff;
@@ -134,14 +145,14 @@ body {
   color: #007bff;
 }
 
-/* Responsividade: esconder itens em telas pequenas */
+
 @media (max-width: 768px) {
   .hamburger {
-    display: block; /* Mostra o botão de menu */
+    display: block; 
   }
 
   .nav-links {
-    display: none; /* Esconde os itens por padrão */
+    display: none;
     flex-direction: column;
     gap: 20px;
     position: absolute;
@@ -155,7 +166,7 @@ body {
   }
 
   .nav-links.active {
-    display: flex; /* Mostra os itens quando ativo */
+    display: flex; 
   }
 }
 
@@ -197,225 +208,10 @@ body {
   height: 78px;
 } 
 
-/* LOGO */
 
-.logo {
-  width: 40px;
-  height: auto;
-  vertical-align: middle;
-  margin-right: 8px;
-}
+/* ISABEL  */
 
-
-
-
-
-.cont {
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-}
-
-.divider {
-  border: none;
-  border-top: 2px solid #000000; 
-  width: 100%; 
-  margin: 20px 0; 
-}
-
-.card {
-  transition: transform 0.3s ease;
-  overflow: hidden; 
-  
-}
-
-.card-img-top {
-  width: 100%; 
-  height: 300px; 
-  object-fit: cover; 
-  border-radius: 5px; 
-}
-
-.background-container  {
-  background: linear-gradient(to right, #fdfdfd, #cac9c6);
-  border-radius: 0px; 
-  padding: 20px; 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-  backdrop-filter: blur(10px); 
-  border: 0px solid rgba(255, 255, 255, 0.3); 
-  color: #fff; 
-  }
-
-
-.isabel-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-.isabel-header {
-  text-align: left;
-  margin-bottom: 30px;
-}
-
-.isabel-header h2 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-  margin: 0;
-}
-
-.isabel-header h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: var(--primary-green);
-  margin: 5px 0 0;
-}
-
-
-.isabel-features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
-  gap: 20px;
-}
-
-.isabel-feature-item {
-  position: relative; 
-  background-color: none; 
-  border: none; 
-  border-radius: 0px; 
-  text-align: center; 
-  padding: 20px; 
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  overflow: hidden; 
-}
-
-.isabel-feature-item::after {
-  content: '';
-  position: absolute;
-  bottom: -50%; 
-  left: 0;
-  width: 100%;
-  height: 50%; 
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), transparent); /* Gradiente para o reflexo */
-  transform: scaleY(-1); /* Inverte verticalmente para criar o efeito de espelho */
-  z-index: -1; /* Mantém o reflexo atrás do conteúdo */
-  pointer-events: none; /* Ignora interações no reflexo */
-  background-attachment: fixed;
-}
-
-
-.isabel-feature-item img {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 15px;
-}
-
-.isabel-feature-item p {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-  margin: 0;
-}
-
-
-@media (max-width: 768px) {
-  .isabel-header h1 {
-    font-size: 28px;
-  }
-}
-.isabel-background{
-  background: linear-gradient(to right, #bcbdbc, #b3d1af); 
-}
-.creative-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.header-isabel {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-
-.main-text-block {
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-
- 
-h1 {
-  font-size: 36px;
-  margin-bottom: 30px;
-  color: var(--text-light);
-  text-align: center;
-  }
-
-
-
-
-.card {
-  background: var(--text-light);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(187, 184, 184, 0.1);
-  width: 300px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-
-.card-icon { 
-  font-size: 50px;
-  color: #4a90e2;
-  margin-bottom: 15px;
-}
-
-
-.card-title {
-  font-size: 24px;
-  color: var(--text-light);
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-
-.card-text {
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--text-light);
-}
-
-
-@media (max-width: 768px) {
-  .card {
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-}
-
-
-html {
-  font-size: 12px;
-  color: #000;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-
-
-
-
-.isabel-banner {
+.isabel-banner { 
   text-align: center;
   background-size: cover;
   background-position: center;
@@ -457,27 +253,7 @@ html {
   text-align: center;
 }
 
-.banner-logo img {
-  max-width: 200px; 
-}
 
-.banner-logo p {
-  font-size: 0.8rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: var(--text-dark);
-  margin-top: 5px;
-  max-width: 400px
-}
-
-.banner-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; 
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
 
 
 .banner-section {
@@ -525,13 +301,15 @@ html {
 }
 
 .img1 {
+
   position: absolute; /* Faz o logo sair do fluxo padrão do layout */
   top: 50%; /* Centraliza verticalmente com base no elemento pai */
   left: 50%; /* Centraliza horizontalmente com base no elemento pai */
   transform: translate(-50%, -50%); /* Move o centro do logo para alinhar com o ponto central */
   z-index: 100; /* Garante que o logo esteja acima do carrossel */
-  max-width: 100%; /* Limita a largura máxima para responsividade */
   height: auto; /* Mantém a proporção da imagem */
+  width: 500px; /* Define a largura fixa */
+
 }
 
 @media (max-width: 768px) {
@@ -1259,6 +1037,7 @@ padding-top: 20px;
   }
 }
 
+
 @media (max-width: 480px) {
   .custom-carousel {
     height: 250px;
@@ -1327,7 +1106,7 @@ padding-top: 20px;
     display: flex;
   }
   #sec-0 article {
-    padding: 5rem 0px;
+    padding: 0px;
   }
   #sec-0 article h1 {
     font-size: 2rem;
