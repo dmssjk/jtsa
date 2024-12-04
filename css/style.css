@@ -11,9 +11,6 @@ body {
   font-family: "Bebas Neue", sans-serif; 
 }
 
-
-
-
 :root {
   --txtaccent: #fff;
   --txtaccent1: #9d9d9f;
@@ -36,9 +33,7 @@ body {
   --font-body: 'Arial', sans-serif;
 }
 
-
 /* Carousel */
-
 
 .carousel {
   width: 100%;
@@ -79,8 +74,6 @@ body {
   opacity: 1;
 }
 
-
-
 /* Navbar */
 .navbar {
   display: flex;
@@ -91,14 +84,12 @@ body {
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-
 .hamburger {
   display: none; 
   font-size: 24px;
   color: #ffffff;
   cursor: pointer;
 }
-
 
 .nav-links {
   align-items: center;
@@ -108,7 +99,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 
 .navbar-item {
   text-align: center;
@@ -164,8 +154,6 @@ body {
   }
 }
 
-
-
 .main-container .fade-in {
   opacity: 0; 
   transform: translateY(20px); 
@@ -173,12 +161,10 @@ body {
   text-align: center;
 }
 
-
 .main-container .fade-in.show {
   opacity: 1;
   transform: translateY(0); 
 }
-
 /* whatsapp button */
 
  .whatsapp-button {
@@ -201,8 +187,6 @@ body {
   width: 78px;
   height: 78px;
 } 
-
-
 /* ISABEL  */
 
 .isabel-banner { 
@@ -235,8 +219,6 @@ body {
   margin: 10px 0 0;
 }
 
-
-
 .banner {
   display: flex;
   flex-direction: column;
@@ -246,9 +228,6 @@ body {
   font-family: var(--font-family);
   text-align: center;
 }
-
-
-
 
 .banner-section {
   max-width: 600px;
@@ -399,23 +378,19 @@ header.top {
 
 /* Sec-0 */
 
-
 #sec-0 {
   background-color: ; /* cor de fundo sec-0 */
-  
-  
- 
-    
 }
+
 #sec-0 header.top p:nth-of-type(2) {
   justify-content: flex-end;
 }
-
 
 #sec-0 header:last-of-type {
   background-color:var(--bgaccent);
   position: relative;
 }
+
 #sec-0 header:last-of-type .container {
   display: flex;
   flex-wrap: wrap;
@@ -424,8 +399,6 @@ header.top {
   padding: 0.65rem 0px;
   position: relative;
 }
-
-
 #sec-0 header:last-of-type h1 {
   font-size: 1.5rem;
   font-style: italic;
@@ -447,9 +420,6 @@ header.top {
   color: var(--haccent);
   font-size: 2rem;
 }
-
-
-
 #sec-0 header nav a {  /* botoes navbar */
   display: block;
   text-decoration: none;
@@ -478,7 +448,6 @@ header.top {
   width: fit-content;
   margin: 0px auto;
 }
-
 #sec-0 article {
   display: flex;
   align-items: center;
@@ -519,7 +488,6 @@ header.top {
   font-family: "Georgia", serif; 
   font-style: italic;
   }
-  
 #sec-0 article a {
   color: var(--haccent2);
   background-color: var(--txtaccent4);
@@ -536,14 +504,12 @@ header.top {
   color: var(--txtaccent);
 }
 
-
 /* sec-1 */
 
 #sec-1 {
   background-color: var(--bgaccent_withOpacity
   );
 }
-
 #sec-1 article {
   padding-top: 20px;
   text-align: center;
@@ -588,7 +554,6 @@ header.top {
   background-color: #f9f9f9;
   text-align: center;
 }
-
 .section-heading {
   font-size: 2.5rem;
   color: #333;
@@ -667,7 +632,6 @@ padding-top: 20px;
 }
 
 /* Sec-4 */
-
 
 #sec-4 {
   display:flex;
@@ -1009,7 +973,6 @@ padding-top: 20px;
   background-color: #005500;
 }
 
-
 /* @MEDIA */
 
 @media (max-width: 768px) {
@@ -1031,7 +994,6 @@ padding-top: 20px;
   }
 }
 
-
 @media (max-width: 480px) {
   .custom-carousel {
     height: 250px;
@@ -1050,12 +1012,6 @@ padding-top: 20px;
 #sec-6 .contact p:last-of-type::before {
   content: "\f3cd";
 }
-
-
-
-
-
-
 
 @media (min-width: 768px) {
   html {

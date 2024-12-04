@@ -1,7 +1,18 @@
 // Configuração de imagens do carousel
 const images = [
-  "./Images/IMG-20241122-WA0001.jpg",
-  "./Images/IMG-20241122-WA0002.jpg",
+  "./Images/10.jpg",
+  "./Images/11.jpg",
+  "./Images/12.jpg",
+  "./Images/13.jpg",
+  "./Images/14.jpg",
+  "./Images/15.jpg",
+  "./Images/16.jpg",
+  "./Images/17.jpg",
+  "./Images/18.jpg",
+  "./Images/19.jpg",
+  "./Images/20.jpg",
+  "./Images/21.jpg",
+  "./Images/22.jpg"
 ];
 
 // Variáveis globais
