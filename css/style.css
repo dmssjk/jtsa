@@ -43,8 +43,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 90%;
+
+  /* Fundo escuro com transparência elegante */
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3), 
+    rgba(0, 0, 0, 0.9)
+  );
+
+  /* Suavizar a opacidade */
+  opacity: 0.9;
+  
+  /* Adicionar transição para suavizar alterações */
+  transition: opacity 0.3s ease-in-out;
 }
+
+/* Exemplo de interação ao passar o mouse */
+.carousel:hover {
+  opacity: 1; /* Totalmente visível no hover */
+}
+
 
 .carousel::before {
   content: ""; /* Elemento vazio para criar o overlay */
@@ -67,7 +84,7 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 3s ease-in-out;
 }
 
 .carousel-slide.active {
