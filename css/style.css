@@ -234,6 +234,8 @@ body {
   font-weight: bold;
   color: var(--text-dark);
   margin: 10px 0 0;
+  align-items: center;
+  justify-content: center !important;
 }
 
 .banner {
@@ -258,7 +260,7 @@ body {
 }
 
 .banner-section h1 .large-text {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: var(--primary-green);
 }
 
@@ -281,13 +283,15 @@ body {
   width: 2px;
   height: 130px;
   background-color: var(--txtaccent4);
+ 
 }
 
 .divider-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center; 
+  justify-content: center !important;
+  align-items: center !important; 
   gap: 10px;
+  
 }
 
 .img1 {
