@@ -162,19 +162,22 @@ function scrollTitle() {
 // Configura um intervalo para a rolagem (velocidade de 200ms)
 setInterval(scrollTitle, 200);
 
-
 function toggleMenu() {
   const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('active');
-}
-
-/* function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
   if (navLinks) {
-    navLinks.classList.toggle('active'); // Alterna o menu
-    console.log('Menu alternado:', navLinks.classList.contains('active') ? 'Ativo' : 'Inativo');
+    navLinks.classList.toggle('active'); // Alterna a classe 'active'
   } else {
     console.error('Elemento ".nav-links" não foi encontrado.');
   }
-} */
+}
+
+// Fecha o menu ao clicar em um link
+document.querySelectorAll('.navbar-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+      navLinks.classList.remove('active'); // Remove a classe 'active' para fechar o menu
+    }
+  });
+});
 
