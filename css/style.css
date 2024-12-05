@@ -102,7 +102,7 @@ body {
 }
 
 .hamburger {
-  display: none; 
+  display: none;
   font-size: 24px;
   color: #ffffff;
   cursor: pointer;
@@ -112,9 +112,10 @@ body {
   align-items: center;
   display: flex;
   list-style: none;
-  gap: 30px; 
+  gap: 30px;
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar-item {
@@ -135,7 +136,6 @@ body {
   transition: color 0.3s ease-in-out;
 }
 
-
 .navbar-item:hover,
 .navbar-item.active {
   color: #007bff;
@@ -146,30 +146,40 @@ body {
   color: #007bff;
 }
 
-
+/* Estilos para dispositivos menores */
 @media (max-width: 768px) {
   .hamburger {
-    display: block; 
+    display: block;
   }
 
   .nav-links {
-    display: none;
+    display: none; /* Escondido por padrão */
     flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
     gap: 20px;
-    position: absolute;
-    top: 60px;
-    right: 10px;
+    position: fixed; /* Para centralizar na tela */
+    top: 20%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o deslocamento para o centro exato */
     background-color: #1c1c1c;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    width: 200px;
+    width: 80%; /* Largura ajustável para telas menores */
+    max-width: 300px; /* Limita a largura máxima */
+    z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+    opacity: 0; /* Invisível inicialmente */
+    pointer-events: none; /* Desativa cliques inicialmente */
+    transition: all 0.3s ease-in-out;
   }
 
   .nav-links.active {
-    display: flex; 
+    display: flex; /* Mostra o menu */
+    opacity: 1; /* Totalmente visível */
+    pointer-events: auto; /* Permite cliques */
   }
 }
+
 
 .main-container .fade-in {
   opacity: 0; 
@@ -308,13 +318,13 @@ body {
 
 @media (max-width: 768px) {
   .img1 {
-    position: relative; /* Tira o logo da posição absoluta */
+    position:absolute; /* Tira o logo da posição absoluta */
     top: auto; /* Reseta o posicionamento vertical */
     left: auto; /* Reseta o posicionamento horizontal */
     transform: none; /* Remove a transformação */
     display: block; /* Garante que o logo se comporte como um bloco normal */
     margin: 0 auto 20px; /* Centraliza horizontalmente e adiciona espaço abaixo */
-    max-width: 60%; /* Ajusta o tamanho do logo */
+    max-width: 40%; /* Ajusta o tamanho do logo */
   }
 }
 
@@ -327,7 +337,7 @@ body {
 
 /* Garantindo que o carrossel não seja afetado */
 .carousel {
-  margin-top: px; /* Adiciona um espaço entre o logo e o carrossel em dispositivos móveis */
+  margin-top: 0px; /* Adiciona um espaço entre o logo e o carrossel em dispositivos móveis */
 }
 
 

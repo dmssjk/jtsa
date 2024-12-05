@@ -161,3 +161,20 @@ function scrollTitle() {
 
 // Configura um intervalo para a rolagem (velocidade de 200ms)
 setInterval(scrollTitle, 200);
+
+
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
+
+/* function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks) {
+    navLinks.classList.toggle('active'); // Alterna o menu
+    console.log('Menu alternado:', navLinks.classList.contains('active') ? 'Ativo' : 'Inativo');
+  } else {
+    console.error('Elemento ".nav-links" não foi encontrado.');
+  }
+} */
+

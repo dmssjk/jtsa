@@ -29,13 +29,13 @@
         <li><a href="#sec-1" class="navbar-item"><i class="fas fa-users"></i>Quem somos </a></li>
         <li><a href="#sec-5" class="navbar-item"><i class="fas fa-comments"></i>Contato</a></li>
         <li>
-         <!--  <a 
+          <a 
             href="https://www.instagram.com/construtorajtsa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
             class="navbar-item" 
             target="_blank" 
             rel="noopener noreferrer">
             <i class="fab fa-instagram"></i> Instagram
-          </a> -->
+          </a> 
         </li>
         
       </ul>
@@ -124,7 +124,7 @@
       <div class="banner">
         <div class="blinking-text">Breve Lançamento</div>
         <div class="isabel-banner"> 
-          <h1 class="isabel-title">Isabel *</h1> <!-- diminuir o tamanho do asterisco -->
+          <h1 class="isabel-title">Isabel</h1> <!-- diminuir o tamanho do asterisco -->
           <p class="isabel-subtitle">Condomínio</p>
           <p class="isabel-location">• VIA CAMBUI •</p>
         </div>
@@ -236,4 +236,19 @@
     <script src="js/bootstrap.bundle.min.js" defer></script>
     <script src="js/scripts.js" defer></script>
   </body>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menu = document.querySelector('.menu');
+      if (menu) {
+        // Certifique-se de que a função toggleMenu só será executada se o elemento existir
+        document.querySelector('.hamburger').onclick = () => {
+          menu.classList.toggle('active');
+        };
+      } else {
+        console.error('Elemento ".menu" não encontrado.');
+      }
+    });
+  </script>
+  
 </html>
