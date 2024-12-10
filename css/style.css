@@ -341,14 +341,10 @@ body {
   }
 }
 
-
-
 /* Garantindo que o carrossel não seja afetado */
 .carousel {
   margin-top: 0px; /* Adiciona um espaço entre o logo e o carrossel em dispositivos móveis */
 }
-
-
 
 @media (max-width: 768px) {
   .banner-content {
