@@ -8,7 +8,8 @@ body {
   box-sizing: border-box;
   outline-style: none;
   overflow-x: hidden;
-  font-family: "Bebas Neue", sans-serif; 
+  font-family: "Roboto", sans-serif;
+
 }
 
 :root {
@@ -29,7 +30,7 @@ body {
   --primary-green: #014701; 
   --secondary-green: #005500; 
   --text-dark: #333;
-  --font-title: 'Playfair Display', serif; 
+  --font-title: 'Playfair Display', sans-serif; 
   --font-body: 'Arial', sans-serif;
 }
 
@@ -305,35 +306,42 @@ body {
 }
 
 .img1 {
-
-  position: absolute; /* Faz o logo sair do fluxo padrão do layout */
-  top: 50%; /* Centraliza verticalmente com base no elemento pai */
-  left: 50%; /* Centraliza horizontalmente com base no elemento pai */
-  transform: translate(-50%, -50%); /* Move o centro do logo para alinhar com o ponto central */
-  z-index: 100; /* Garante que o logo esteja acima do carrossel */
-  height: 500px; /* Mantém a proporção da imagem */
-  width: 500px; /* Define a largura fixa */
-
+  position: absolute; /* Garante que o logo fique sobre o carousel */
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta o ponto de referência para o centro */
+  z-index: 100; /* Coloca o logo acima das imagens do carousel */
+  width: 500px; /* Largura padrão para telas maiores */
+  height: 500px; /* Altura padrão para telas maiores */
+  max-width: 100%; /* Garante que o logo não ultrapasse o contêiner */
+  max-height: 100%; /* Garante que a altura seja controlada */
 }
 
+/* Ajuste para tablets e telas menores que 768px */
 @media (max-width: 768px) {
   .img1 {
-    position:absolute; /* Tira o logo da posição absoluta */
-    top: auto; /* Reseta o posicionamento vertical */
-    left: auto; /* Reseta o posicionamento horizontal */
-    transform: none; /* Remove a transformação */
-    display: block; /* Garante que o logo se comporte como um bloco normal */
-    margin: 0 auto 20px; /* Centraliza horizontalmente e adiciona espaço abaixo */
-    max-width: 40%; /* Ajusta o tamanho do logo */
+    width: 60%; /* Reduz a largura do logo */
+    height: auto; /* Mantém a proporção original */
+    max-height: 200px; /* Limita a altura */
+    top: 50%; /* Mantém a centralização vertical */
+    left: 50%; /* Mantém a centralização horizontal */
+    transform: translate(-50%, -50%); /* Mantém o logo centralizado */
   }
 }
 
 /* Ajuste para telas menores que 480px */
 @media (max-width: 480px) {
   .img1 {
-    max-width: 50%; /* Reduz ainda mais o tamanho do logo */
+    width: 60%; /* Reduz ainda mais a largura */
+    height: auto; /* Mantém a proporção original */
+    max-height: 150px; /* Limita a altura */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Mantém o logo centralizado */
   }
 }
+
+
 
 /* Garantindo que o carrossel não seja afetado */
 .carousel {
@@ -454,7 +462,7 @@ header.top {
 #sec-0 header nav a {  /* botoes navbar */
   display: block;
   text-decoration: none;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 22px !important; /* fix */
   color: var(--text-light);
   text-align: center;
@@ -527,7 +535,7 @@ header.top {
   margin-left: 5px;
   border: solid 1px var(--haccent2);
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: bold;
 }
 #sec-0 article a:hover {
@@ -549,7 +557,7 @@ header.top {
   font-size: 1.85rem;
   color: var(--haccent);
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
 }
 #sec-1 article h2 {
   font-size: 1.1rem;
@@ -565,7 +573,7 @@ header.top {
 #sec-1 article a {
   color: var(--bgaccent) !important;
   background-color: var(--haccent);
-  text-transform: uppercase;
+  text-transform: none;
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 5px;
@@ -673,7 +681,7 @@ padding-top: 20px;
   padding-bottom: 4rem;
 }
 #sec-4 h1 {
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 1.7rem;
   margin-bottom: 1.6rem;
   color: var(--txtaccent);
@@ -713,7 +721,7 @@ padding-top: 20px;
 }
 
 #sec-5 h1 {
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 1.7rem;
   margin-bottom: 1.6rem;
   color: var(--txtaccent4);
@@ -745,7 +753,7 @@ padding-top: 20px;
 }
 #sec-5 .contactUs h1 {
   color: var(--text-light);
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 1.52rem;
   font-weight: 800;
   margin: 0px;
@@ -754,7 +762,7 @@ padding-top: 20px;
 #sec-5 .contactUs h2 {
   font-size: 2rem;
   font-weight: normal;
-  text-transform: uppercase;
+  text-transform: none;
   margin: 0px;
   color: var(--txtaccent);
   align-items: start;
@@ -773,7 +781,7 @@ padding-top: 20px;
 }
 #sec-5 .contactUs form input[type="submit"] {
   padding: 6px 20px;
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 600;
   background-color: var(--textaccent3);
   color: var(--txtaccent5);
